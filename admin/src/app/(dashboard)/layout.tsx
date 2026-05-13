@@ -1,0 +1,32 @@
+'use client';
+
+import React from 'react';
+import { Sidebar } from '@/components/Sidebar';
+import { Header } from '@/components/Header';
+import { useAdminStore } from '@/lib/store';
+import { cn } from '@/lib/utils';
+
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const { isSidebarOpen } = useAdminStore();
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Sidebar />
+      <div 
+        className={cn(
+          "transition-all duration-300 ease-in-out min-h-screen",
+          isSidebarOpen ? "pl-64" : "pl-20"
+        )}
+      >
+        <Header />
+        <main className="p-8">
+          {children}
+        </main>
+      </div>
+    </div>
+  );
+}
