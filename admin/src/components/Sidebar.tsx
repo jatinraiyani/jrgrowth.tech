@@ -20,14 +20,9 @@ import {
 import { cn } from '@/lib/utils';
 import { useAdminStore } from '@/lib/store';
 
-const menuItems = [
+const menuItems: any[] = [
   { name: 'Dashboard', icon: LayoutDashboard, href: '/dashboard' },
-  { name: 'SEO Management', icon: Search, href: '/seo' },
-  { name: 'Case Studies', icon: Briefcase, href: '/case-studies' },
-  { name: 'Reviews', icon: Star, href: '/reviews' },
   { name: 'Blogs & Insights', icon: BookOpen, href: '/blogs' },
-  { name: 'Media Library', icon: ImageIcon, href: '/media' },
-  { name: 'Website Settings', icon: Settings, href: '/settings' },
 ];
 
 export function Sidebar() {
@@ -59,25 +54,45 @@ export function Sidebar() {
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 space-y-2 px-3 py-4">
+        <nav className="flex-1 space-y-2 px-3 py-4 overflow-y-auto custom-scrollbar">
           {menuItems.map((item) => {
-            const isActive = pathname === item.href;
+            const isActive = pathname === item.href || (item.subItems?.some((sub: any) => pathname === sub.href));
             return (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={cn(
-                  "flex items-center gap-4 rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-200 group",
-                  isActive 
-                    ? "bg-primary text-white shadow-md shadow-primary/20" 
-                    : "text-slate-500 hover:bg-slate-100 hover:text-primary"
+              <div key={item.name} className="space-y-1">
+                <Link
+                  href={item.href}
+                  className={cn(
+                    "flex items-center gap-4 rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-200 group",
+                    isActive 
+                      ? "bg-primary text-white shadow-md shadow-primary/20" 
+                      : "text-slate-500 hover:bg-slate-100 hover:text-primary"
+                  )}
+                >
+                  <item.icon size={20} className={cn("shrink-0", isActive ? "text-white" : "group-hover:scale-110 transition-transform")} />
+                  <span className={cn("whitespace-nowrap transition-opacity", !isSidebarOpen && "opacity-0 invisible")}>
+                    {item.name}
+                  </span>
+                </Link>
+                
+                {item.subItems && isSidebarOpen && isActive && (
+                  <div className="ml-9 space-y-1 animate-in fade-in slide-in-from-top-2 duration-300">
+                    {item.subItems.map((sub: any) => (
+                      <Link
+                        key={sub.name}
+                        href={sub.href}
+                        className={cn(
+                          "block px-4 py-2 text-xs font-bold rounded-lg transition-all",
+                          pathname === sub.href 
+                            ? "text-primary bg-primary/5" 
+                            : "text-slate-400 hover:text-primary hover:bg-slate-50"
+                        )}
+                      >
+                        {sub.name}
+                      </Link>
+                    ))}
+                  </div>
                 )}
-              >
-                <item.icon size={20} className={cn("shrink-0", isActive ? "text-white" : "group-hover:scale-110 transition-transform")} />
-                <span className={cn("whitespace-nowrap transition-opacity", !isSidebarOpen && "opacity-0 invisible")}>
-                  {item.name}
-                </span>
-              </Link>
+              </div>
             );
           })}
         </nav>
@@ -85,18 +100,13 @@ export function Sidebar() {
         {/* Footer Actions */}
         <div className="border-t border-slate-200 p-4 space-y-2">
           <Link
-            href="/profile"
-            className="flex items-center gap-4 rounded-xl px-4 py-3 text-sm font-semibold text-slate-500 hover:bg-slate-100 transition-all"
-          >
-            <User size={20} className="shrink-0" />
-            <span className={cn(!isSidebarOpen && "hidden")}>Admin Profile</span>
-          </Link>
-          <button
+            href="/login"
+            onClick={() => localStorage.removeItem('isAdminLoggedIn')}
             className="flex w-full items-center gap-4 rounded-xl px-4 py-3 text-sm font-semibold text-red-500 hover:bg-red-50 transition-all"
           >
             <LogOut size={20} className="shrink-0" />
             <span className={cn(!isSidebarOpen && "hidden")}>Logout</span>
-          </button>
+          </Link>
         </div>
       </div>
     </aside>

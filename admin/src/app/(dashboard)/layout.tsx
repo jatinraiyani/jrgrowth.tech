@@ -1,6 +1,7 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { Sidebar } from '@/components/Sidebar';
 import { Header } from '@/components/Header';
 import { useAdminStore } from '@/lib/store';
@@ -12,6 +13,14 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   const { isSidebarOpen } = useAdminStore();
+  const router = useRouter();
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem('isAdminLoggedIn');
+    if (!isLoggedIn) {
+      router.push('/login');
+    }
+  }, [router]);
 
   return (
     <div className="min-h-screen bg-background">

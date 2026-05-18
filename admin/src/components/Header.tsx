@@ -1,12 +1,38 @@
 'use client';
 
-import React from 'react';
-import { Bell, Search, User, LogOut, Menu } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Menu, Edit2 } from 'lucide-react';
 import { useAdminStore } from '@/lib/store';
 import { cn } from '@/lib/utils';
 
 export function Header() {
-  const { toggleSidebar, user } = useAdminStore();
+  const { toggleSidebar } = useAdminStore();
+  const [name, setName] = useState('Jatin Raiyani');
+  const [profilePic, setProfilePic] = useState('https://api.dicebear.com/7.x/avataaars/svg?seed=jatin');
+  const [isEditing, setIsEditing] = useState(false);
+
+  useEffect(() => {
+    fetch('/api/profile')
+      .then(res => res.json())
+      .then(data => {
+        if (data.name) setName(data.name);
+        if (data.photo) setProfilePic(data.photo);
+      })
+      .catch(err => console.error(err));
+  }, []);
+
+  const handleSave = async () => {
+    try {
+      await fetch('/api/profile', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, photo: profilePic }),
+      });
+    } catch (error) {
+      console.error(error);
+    }
+    setIsEditing(false);
+  };
 
   return (
     <header className="sticky top-0 z-30 flex h-20 w-full items-center justify-between border-b border-slate-200 bg-white/80 px-8 backdrop-blur-md">
@@ -17,38 +43,57 @@ export function Header() {
         >
           <Menu size={20} />
         </button>
-        
-        {/* Search Bar */}
-        <div className="relative hidden md:block">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-          <input 
-            type="text" 
-            placeholder="Search systems, SEO data..."
-            className="h-11 w-80 rounded-xl bg-slate-100 pl-10 pr-4 text-sm font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all border border-transparent focus:border-primary/30"
-          />
-        </div>
       </div>
 
       <div className="flex items-center gap-6">
-        {/* Notifications */}
-        <button className="relative rounded-xl p-2.5 hover:bg-slate-100 transition-colors">
-          <Bell size={20} className="text-slate-600" />
-          <span className="absolute right-2.5 top-2.5 h-2 w-2 rounded-full bg-red-500 border-2 border-white"></span>
-        </button>
-
         {/* Profile */}
-        <div className="flex items-center gap-3 pl-6 border-l border-slate-200">
+        <div className="flex items-center gap-3 relative">
           <div className="hidden lg:block text-right">
-            <p className="text-sm font-bold text-primary-dark">Jatin Raiyani</p>
+            <p className="text-sm font-bold text-primary-dark">{name}</p>
             <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Master Admin</p>
           </div>
-          <div className="h-10 w-10 overflow-hidden rounded-xl bg-primary/10 border-2 border-white shadow-sm ring-1 ring-slate-100 transition-transform hover:scale-105 cursor-pointer">
+          <div 
+            onClick={() => setIsEditing(!isEditing)}
+            className="h-10 w-10 overflow-hidden rounded-xl bg-primary/10 border-2 border-white shadow-sm ring-1 ring-slate-100 transition-transform hover:scale-105 cursor-pointer"
+          >
              <img 
-               src="https://api.dicebear.com/7.x/avataaars/svg?seed=jatin" 
+               src={profilePic} 
                alt="Admin Profile" 
                className="h-full w-full object-cover"
              />
           </div>
+
+          {isEditing && (
+            <div className="absolute top-14 right-0 w-72 bg-white rounded-2xl shadow-xl border border-slate-100 p-4 z-50">
+              <h4 className="text-sm font-bold text-slate-900 mb-3">Edit Profile</h4>
+              <div className="space-y-3">
+                <div>
+                  <label className="text-xs font-bold text-slate-500 uppercase">Name</label>
+                  <input 
+                    type="text" 
+                    value={name} 
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full mt-1 px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs font-bold text-slate-500 uppercase">Profile Picture URL</label>
+                  <input 
+                    type="text" 
+                    value={profilePic} 
+                    onChange={(e) => setProfilePic(e.target.value)}
+                    className="w-full mt-1 px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                  />
+                </div>
+                <button 
+                  onClick={handleSave}
+                  className="w-full py-2 bg-emerald-600 text-white rounded-lg text-sm font-bold hover:bg-emerald-700 transition-colors"
+                >
+                  Save Changes
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </header>

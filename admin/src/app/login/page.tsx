@@ -20,6 +20,7 @@ export default function LoginPage() {
     // Simulated login for now
     setTimeout(() => {
       if (email === 'jatin@jrgrowth.tech' && password === 'Jatin@jrgrowth_admin_1') {
+        localStorage.setItem('isAdminLoggedIn', 'true');
         router.push('/dashboard');
       } else {
         setError('Invalid credentials. Please try again.');
