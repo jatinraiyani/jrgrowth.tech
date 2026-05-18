@@ -16,6 +16,7 @@ import { TableHeader } from '@tiptap/extension-table-header';
 import { Metadata } from 'next';
 
 export const revalidate = 60; // Revalidate every 60 seconds
+export const runtime = 'edge';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const resolvedParams = await params;
