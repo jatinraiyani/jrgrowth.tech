@@ -16,6 +16,10 @@
   --color-outline-variant: #c0c8c4;
   --color-inverse-surface: #2e312f;
 
+  --color-primary-dark: #185441;
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+
   --font-display: "Hanken Grotesk", sans-serif;
   --font-body: "Manrope", sans-serif;
   --font-label: "Geist", sans-serif;
@@ -26,6 +30,7 @@
   --radius-2xl: 1.5rem;
   --radius-full: 9999px;
 }
+
 
 @layer base {
   :root {
@@ -202,3 +207,44 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Admin Panel Styling */
+@plugin "@tailwindcss/typography";
+
+.admin-root {
+  --background: #EEEEEE;
+  --foreground: #185441;
+  --primary: #467667;
+  --primary-dark: #185441;
+  --accent-green: #c7fbe8;
+  
+  /* Sidebar & Cards */
+  --card: #ffffff;
+  --card-foreground: #185441;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #185441;
+  --border: #e2e8f0;
+  
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Hanken Grotesk', var(--font-body), sans-serif;
+}
+
+/* Glassmorphism Utility */
+.admin-root .glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+/* Premium Card Hover */
+.admin-root .premium-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.admin-root .premium-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
+}
+
