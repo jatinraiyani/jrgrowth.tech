@@ -1,7 +1,4 @@
 name = "jrgrowth-tech"
-compatibility_date = "2026-04-23"
-compatibility_flags = ["nodejs_compat"]
-
-[assets]
-directory = ".open-next/assets"
-binding = "ASSETS"
+compatibility_date = "2026-05-14"
+compatibility_flags = ["nodejs_compat_v2"]
+pages_build_output_dir = ".open-next"

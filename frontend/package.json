@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy"
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "pages:build": "npx opennextjs-cloudflare build && node -e \"require('fs').renameSync('.open-next/worker.js','.open-next/_worker.js')\""
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
