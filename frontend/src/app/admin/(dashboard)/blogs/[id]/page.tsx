@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -13,7 +15,7 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
   const id = unwrappedParams.id;
   const router = useRouter();
   const isNew = id === 'new';
-  
+
   // Basic Data
   const [title, setTitle] = useState('');
   const [slug, setSlug] = useState('');
@@ -22,14 +24,14 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
   const [featuredImage, setFeaturedImage] = useState('');
   const [gallery, setGallery] = useState<string[]>([]);
   const [status, setStatus] = useState('draft');
-  
+
   // SEO Data
   const [focusKeyword, setFocusKeyword] = useState('');
   const [seoTitle, setSeoTitle] = useState('');
   const [metaDescription, setMetaDescription] = useState('');
   const [canonicalUrl, setCanonicalUrl] = useState('');
   const [robotsMeta, setRobotsMeta] = useState('index, follow');
-  
+
   // Social SEO
   const [ogTitle, setOgTitle] = useState('');
   const [ogDescription, setOgDescription] = useState('');
@@ -66,7 +68,7 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
       setOgDescription(data.og_description || '');
       setTwitterTitle(data.twitter_title || '');
       setTwitterDescription(data.twitter_description || '');
-      
+
       const { data: images } = await supabase.from('blog_images').select('image_url').eq('blog_id', id).order('display_order');
       if (images) {
         setGallery(images.map((img: any) => img.image_url));
@@ -78,7 +80,7 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newTitle = e.target.value;
     setTitle(newTitle);
-    
+
     if (isNew) {
       const newSlug = newTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
       setSlug(newSlug);
@@ -98,7 +100,7 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
   const handleGalleryUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
     if (!files.length) return;
-    
+
     if (gallery.length + files.length > 5) {
       alert('You can only upload a maximum of 5 images.');
       return;
@@ -111,7 +113,7 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
       if (url) newUrls.push(url);
     }
     setIsUploadingImage(false);
-    
+
     if (newUrls.length) {
       setGallery([...gallery, ...newUrls]);
     } else {
@@ -135,7 +137,7 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
     }
 
     setIsSaving(true);
-    
+
     const blogData = {
       title, slug, category, content, featured_image: featuredImage, status: publishStatus,
       focus_keyword: focusKeyword, seo_title: seoTitle, meta_description: metaDescription,
@@ -147,7 +149,7 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
 
     let result;
     let currentBlogId = id;
-    
+
     if (isNew) {
       result = await supabase.from('blogs').insert([blogData]).select().single();
       if (result.data) currentBlogId = result.data.id;
@@ -168,7 +170,7 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
     }
 
     setIsSaving(false);
-    
+
     if (result.error) {
       alert('Error saving blog: ' + result.error.message);
     } else {
@@ -201,14 +203,14 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <button 
+          <button
             onClick={() => handlePublish('draft')}
             disabled={isSaving}
             className="px-5 py-2.5 rounded-xl text-sm font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors disabled:opacity-50"
           >
             Save Draft
           </button>
-          <button 
+          <button
             onClick={() => handlePublish('published')}
             disabled={isSaving}
             className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 transition-all shadow-sm shadow-emerald-600/20 disabled:opacity-50"
@@ -222,8 +224,8 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-6">
           <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-            <input 
-              type="text" 
+            <input
+              type="text"
               placeholder="Enter post title here..."
               value={title}
               onChange={handleTitleChange}
@@ -231,8 +233,8 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
             />
             <div className="flex items-center gap-2 mt-4 text-sm font-medium text-slate-500">
               <span className="text-slate-400">jrgrowth.tech/insights/</span>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 value={slug}
                 onChange={(e) => setSlug(e.target.value)}
                 className="flex-1 focus:outline-none focus:text-primary transition-colors bg-transparent"
@@ -241,7 +243,7 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
             </div>
           </div>
           <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden h-[600px] flex flex-col">
-             <BlogEditor content={content} onChange={setContent} />
+            <BlogEditor content={content} onChange={setContent} />
           </div>
         </div>
 
@@ -252,11 +254,11 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
             <h3 className="text-sm font-black text-slate-900 uppercase tracking-widest flex items-center gap-2">
               <Settings className="w-4 h-4 text-primary" /> Post Settings
             </h3>
-            
+
             <div className="space-y-4">
               <div>
                 <label className="block text-xs font-bold text-slate-500 uppercase mb-2">Category</label>
-                <select 
+                <select
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
                   className="w-full bg-slate-50 border border-slate-200 text-slate-700 text-sm rounded-xl focus:ring-emerald-500 focus:border-emerald-500 block p-2.5 font-medium"
@@ -271,7 +273,7 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
 
               <div>
                 <label className="block text-xs font-bold text-slate-500 uppercase mb-2">Featured Image</label>
-                <div 
+                <div
                   onClick={() => fileInputRef.current?.click()}
                   className="border-2 border-dashed border-slate-200 rounded-xl p-6 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-slate-50 hover:border-emerald-500 transition-all overflow-hidden relative"
                 >
@@ -299,7 +301,7 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
                   {gallery.map((url, idx) => (
                     <div key={idx} className="relative group rounded-lg overflow-hidden border border-slate-200">
                       <img src={url} alt={`Gallery ${idx}`} className="w-full h-24 object-cover" />
-                      <button 
+                      <button
                         onClick={() => removeGalleryImage(idx)}
                         className="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity"
                       >
@@ -324,16 +326,16 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
             <h3 className="text-sm font-black text-slate-900 uppercase tracking-widest flex items-center gap-2">
               <Globe className="w-4 h-4 text-blue-500" /> SEO Optimization
             </h3>
-            
+
             <div className="space-y-4">
               <div>
                 <label className="block text-xs font-bold text-slate-500 uppercase mb-2">Focus Keyword</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   value={focusKeyword}
                   onChange={(e) => setFocusKeyword(e.target.value)}
-                  className="bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium" 
-                  placeholder="e.g. Technical SEO Audit" 
+                  className="bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium"
+                  placeholder="e.g. Technical SEO Audit"
                 />
               </div>
 
@@ -344,18 +346,18 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
                     {metaDescription.length}/160
                   </span>
                 </div>
-                <textarea 
-                  rows={4} 
+                <textarea
+                  rows={4}
                   value={metaDescription}
                   onChange={(e) => setMetaDescription(e.target.value)}
-                  className="bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium resize-none" 
-                  placeholder="Write a compelling meta description..." 
+                  className="bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium resize-none"
+                  placeholder="Write a compelling meta description..."
                 />
               </div>
 
               {/* Advanced SEO Toggle */}
               <div className="pt-4 border-t border-slate-100">
-                <button 
+                <button
                   onClick={() => setShowAdvancedSeo(!showAdvancedSeo)}
                   className="w-full flex items-center justify-between text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors"
                 >
@@ -367,27 +369,27 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
                   <div className="mt-4 space-y-4 animate-in fade-in slide-in-from-top-2 duration-300">
                     <div>
                       <label className="block text-xs font-bold text-slate-500 uppercase mb-2">SEO Title</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         value={seoTitle}
                         onChange={(e) => setSeoTitle(e.target.value)}
-                        className="bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium" 
-                        placeholder="Leave blank to use main title" 
+                        className="bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium"
+                        placeholder="Leave blank to use main title"
                       />
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-slate-500 uppercase mb-2">Canonical URL</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         value={canonicalUrl}
                         onChange={(e) => setCanonicalUrl(e.target.value)}
-                        className="bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium" 
-                        placeholder="https://..." 
+                        className="bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium"
+                        placeholder="https://..."
                       />
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-slate-500 uppercase mb-2">Robots Meta</label>
-                      <select 
+                      <select
                         value={robotsMeta}
                         onChange={(e) => setRobotsMeta(e.target.value)}
                         className="bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium"
@@ -402,19 +404,19 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
                     <div className="pt-4 pb-2">
                       <h4 className="text-xs font-black text-slate-900 uppercase tracking-widest mb-3">Open Graph (Facebook/LinkedIn)</h4>
                       <div className="space-y-3">
-                        <input 
-                          type="text" 
+                        <input
+                          type="text"
                           value={ogTitle}
                           onChange={(e) => setOgTitle(e.target.value)}
-                          className="bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium" 
-                          placeholder="OG Title" 
+                          className="bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium"
+                          placeholder="OG Title"
                         />
-                        <textarea 
-                          rows={2} 
+                        <textarea
+                          rows={2}
                           value={ogDescription}
                           onChange={(e) => setOgDescription(e.target.value)}
-                          className="bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium resize-none" 
-                          placeholder="OG Description" 
+                          className="bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium resize-none"
+                          placeholder="OG Description"
                         />
                       </div>
                     </div>
@@ -422,19 +424,19 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
                     <div className="pt-2 pb-2">
                       <h4 className="text-xs font-black text-slate-900 uppercase tracking-widest mb-3">Twitter Cards</h4>
                       <div className="space-y-3">
-                        <input 
-                          type="text" 
+                        <input
+                          type="text"
                           value={twitterTitle}
                           onChange={(e) => setTwitterTitle(e.target.value)}
-                          className="bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium" 
-                          placeholder="Twitter Title" 
+                          className="bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium"
+                          placeholder="Twitter Title"
                         />
-                        <textarea 
-                          rows={2} 
+                        <textarea
+                          rows={2}
                           value={twitterDescription}
                           onChange={(e) => setTwitterDescription(e.target.value)}
-                          className="bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium resize-none" 
-                          placeholder="Twitter Description" 
+                          className="bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium resize-none"
+                          placeholder="Twitter Description"
                         />
                       </div>
                     </div>
