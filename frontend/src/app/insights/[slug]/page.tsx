@@ -22,18 +22,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const resolvedParams = await params;
     const { data: post } = await supabase
         .from('blogs')
-        .select('meta_title, meta_description, featured_image')
+        .select('title, seo_title, meta_description, featured_image, og_title, og_description')
         .eq('slug', resolvedParams.slug)
         .single();
 
     if (!post) return { title: 'Not Found' };
 
+    const pageTitle = post.seo_title || post.title || 'JR Growth Insight';
+
     return {
-        title: post.meta_title || 'JR Growth Insight',
+        title: pageTitle,
         description: post.meta_description || '',
         openGraph: {
-            title: post.meta_title || 'JR Growth Insight',
-            description: post.meta_description || '',
+            title: post.og_title || pageTitle,
+            description: post.og_description || post.meta_description || '',
             images: post.featured_image ? [{ url: post.featured_image }] : [],
             type: 'article',
         }
