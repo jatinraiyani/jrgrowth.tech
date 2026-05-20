@@ -2,7 +2,3 @@ name = "jrgrowth-tech"
 compatibility_date = "2026-05-18"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".open-next"
-
-[vars]
-NEXT_PUBLIC_SUPABASE_URL = "https://wkobsdxryzfqkovtonxz.supabase.co"
-NEXT_PUBLIC_SUPABASE_ANON_KEY = "sb_publishable_mh1SCRT9pDr0wh_qZP259g_74iqhEJH"

@@ -2,10 +2,6 @@ name = "jrgrowth-admin"
 compatibility_date = "2026-05-18"
 compatibility_flags = ["nodejs_compat"]
 
-[vars]
-NEXT_PUBLIC_SUPABASE_URL = "https://wkobsdxryzfqkovtonxz.supabase.co"
-NEXT_PUBLIC_SUPABASE_ANON_KEY = "sb_publishable_mh1SCRT9pDr0wh_qZP259g_74iqhEJH"
-
 [assets]
 directory = ".open-next/assets"
 binding = "ASSETS"
