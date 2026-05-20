@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "pages:build": "npx opennextjs-cloudflare build && node -e \"require('fs').renameSync('.open-next/worker.js','.open-next/_worker.js')\""
+    "pages:build": "npx opennextjs-cloudflare build && node build-cloudflare.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
