@@ -1,14 +1,32 @@
 
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { supabase } from '@/lib/supabase';
 
 export default function InsightsClient({ initialBlogs }: { initialBlogs: any[] }) {
+    const [blogs, setBlogs] = useState<any[]>(initialBlogs);
+    const [loading, setLoading] = useState(initialBlogs.length === 0);
     const [visibleCount, setVisibleCount] = useState(12);
 
+    useEffect(() => {
+        if (initialBlogs.length === 0) {
+            supabase
+                .from('blogs')
+                .select('*')
+                .eq('status', 'published')
+                .order('created_at', { ascending: false })
+                .then(({ data }) => {
+                    if (data) setBlogs(data);
+                    setLoading(false);
+                });
+        }
+    }, [initialBlogs.length]);
+
     const loadMore = () => {
-        setVisibleCount(prev => Math.min(prev + 12, initialBlogs.length));
+        setVisibleCount(prev => Math.min(prev + 12, blogs.length));
     };
+
 
     return (
         <div className="min-h-screen bg-white">
@@ -66,8 +84,17 @@ export default function InsightsClient({ initialBlogs }: { initialBlogs: any[] }
                         <div className="mt-12 h-1.5 w-24 bg-primary mx-auto rounded-full"></div>
                     </div>
 
+                    {loading ? (
+                        <div className="col-span-3 py-24 text-center">
+                            <div className="inline-flex items-center gap-3 text-text-body/60">
+                                <span className="material-symbols-outlined text-2xl animate-spin" style={{display:'inline-block'}}>autorenew</span>
+                                <span className="font-semibold">Loading insights...</span>
+                            </div>
+                        </div>
+                    ) : null}
+
                     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                        {initialBlogs.slice(0, visibleCount).map((blog, index) => (
+                        {blogs.slice(0, visibleCount).map((blog, index) => (
                             <article key={blog.id} className="group rounded-[2rem] bg-white border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-all reveal reveal-up active" style={{ transitionDelay: `${(index % 3) * 0.1}s` }}>
                                 <Link href={`/insights/${blog.slug}`} className="block">
                                     <div className="aspect-video overflow-hidden bg-slate-100">
@@ -92,13 +119,13 @@ export default function InsightsClient({ initialBlogs }: { initialBlogs: any[] }
                         ))}
                     </div>
 
-                    {initialBlogs.length === 0 && (
+                    {!loading && blogs.length === 0 && (
                         <div className="text-center py-20 text-slate-500">
                             No insights published yet. Check back soon!
                         </div>
                     )}
 
-                    {visibleCount < initialBlogs.length && (
+                    {visibleCount < blogs.length && (
                         <div className="mt-16 text-center">
                             <button 
                                 onClick={loadMore}

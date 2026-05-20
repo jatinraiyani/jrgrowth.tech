@@ -1,11 +1,9 @@
 
-import { supabase } from '@/lib/supabase';
 import InsightsClient from './InsightsClient';
 
 import { Metadata } from 'next';
 
-export const revalidate = 60; // Revalidate every 60 seconds
-
+// Static metadata only — no SSR Supabase calls to avoid Cloudflare Pages runtime crash
 export const metadata: Metadata = {
   title: "Local SEO Insights, Google Maps Strategies & AI SEO Blogs | JR Growth",
   description: "Explore expert insights, Local SEO strategies, Google Business Profile optimization guides, AI SEO trends, and Google Ads growth techniques from JR Growth.",
@@ -36,16 +34,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function InsightsPage() {
-    const { data: blogs, error } = await supabase
-        .from('blogs')
-        .select('*')
-        .eq('status', 'published')
-        .order('created_at', { ascending: false });
-
-    if (error) {
-        console.error('Error fetching blogs:', error);
-    }
-
-    return <InsightsClient initialBlogs={blogs || []} />;
+// Client component handles all Supabase fetching via useEffect
+export default function InsightsPage() {
+    return <InsightsClient initialBlogs={[]} />;
 }

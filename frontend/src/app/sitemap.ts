@@ -1,9 +1,10 @@
 import { MetadataRoute } from 'next';
-import { supabase } from '@/lib/supabase';
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Base static routes
-  const routes: MetadataRoute.Sitemap = [
+// Static sitemap only — dynamic blog routes are omitted to avoid SSR Supabase
+// calls that crash on Cloudflare Pages Workers runtime.
+// Blog routes will still be crawled by search engines via the Insights page links.
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
     {
       url: 'https://jrgrowth.tech',
       lastModified: new Date(),
@@ -29,19 +30,4 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.5,
     },
   ];
-
-  // Fetch all published blogs
-  const { data: blogs } = await supabase
-    .from('blogs')
-    .select('slug, updated_at')
-    .eq('status', 'published');
-
-  const blogRoutes: MetadataRoute.Sitemap = (blogs || []).map((blog) => ({
-    url: `https://jrgrowth.tech/insights/${blog.slug}`,
-    lastModified: new Date(blog.updated_at),
-    changeFrequency: 'weekly',
-    priority: 0.7,
-  }));
-
-  return [...routes, ...blogRoutes];
 }
