@@ -58,7 +58,62 @@ export default function RootLayout({
       "https://www.instagram.com/jatinraiyani.gbp",
       "https://www.linkedin.com/in/jatin-raiyani/"
     ],
-    "description": "JR Growth is an AI-Powered Local SEO & Google Business Growth Partner for Indian local businesses, specializing in Google Business Profile optimization and Performance Google Ads."
+    "description": "JR Growth is an AI-Powered Local SEO & Google Business Growth Partner for Indian local businesses, specializing in Google Business Profile optimization and Performance Google Ads.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "3"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Manish Patel"
+        },
+        "reviewBody": "JR Growth's developer-level SEO is on another level. Most agencies just gave us checklists, but Jatin optimized our site speed, structured schema, and Google Maps listing directly. Our local industrial inquiries have more than doubled.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Shreeji Precast"
+        }
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Andrew Harris"
+        },
+        "reviewBody": "Their AI-driven Local SEO and Google Ads strategy helped us capture high-intent B2B leads. Our wholesale inquiry volume grew by 4.1x while lowering our overall acquisition costs. Jatin is a true local growth partner.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Mega Retail Ltd."
+        }
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Dr. Anita Sharma"
+        },
+        "reviewBody": "Our beauty clinic saw a massive 4.6x growth in appointment bookings after optimizing our Google Business Profile and local Ads. We are now the top-rated clinic in our area, generating consistent daily walk-ins.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Anita Skin Clinic"
+        }
+      }
+    ]
   };
 
   return (

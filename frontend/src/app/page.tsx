@@ -82,8 +82,83 @@ export default function Home() {
     }
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does Local SEO take to show results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Local SEO is a long-term growth strategy. Most businesses start seeing improvements in Google rankings and map visibility within 30–90 days, depending on competition, business location, and current website/GBP condition. For highly competitive industries like clinics, real estate, or salons, consistent monthly optimization is recommended for better long-term results."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between Local SEO and Google Business Profile Optimization?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Local SEO focuses on improving your overall online visibility through website optimization, local keywords, technical SEO, citations, and local landing pages. Google Business Profile (GBP) Optimization focuses specifically on improving your Google Maps ranking, business profile visibility, calls & direction requests, and reviews & customer engagement. Both work best together."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you help my business rank higher on Google Maps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Our Google Business Profile optimization strategies are designed to improve your visibility in Google Maps and local search results by optimizing business categories, services, local relevance, reviews, geo-targeting signals, and engagement activity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you guarantee #1 rankings on Google?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No ethical SEO expert can guarantee #1 rankings because Google’s algorithm constantly changes. We guarantee transparent work, proven optimization strategies, regular reporting, and consistent improvements focused on generating real business results."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Google Ads better than SEO for getting leads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Google Ads gives faster results by appearing instantly in search results, while Local SEO builds long-term organic visibility and trust. The best strategy is using Google Ads for immediate leads and Local SEO/GBP optimization for long-term growth."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a website for Local SEO or Google Business Profile optimization?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A website is highly recommended for better rankings and credibility. Google Business Profile optimization can help businesses without a website, but businesses with optimized websites generally rank stronger and convert better."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I receive reports and updates on work progress?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Transparency is a core part of JR Growth. Depending on your package, you’ll receive ranking reports, Google Business insights, lead & traffic tracking, monthly performance updates, and strategy recommendations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which businesses benefit the most from your services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our services are ideal for local businesses that want more visibility, calls, and customers from Google. Commonly benefiting industries include clinics, salons, spas, restaurants, cafes, real estate, gyms, home services, retail, and education."
+        }
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       
 
     
@@ -816,6 +891,92 @@ export default function Home() {
         </div>
     </section>
 
+    {/* Client Reviews Section */}
+    <section className="py-32 bg-slate-50/50 border-t border-slate-100" id="reviews">
+        <div className="mx-auto max-w-7xl px-6">
+            <div className="mb-20 text-center reveal reveal-up">
+                <span className="inline-block px-3 py-1.5 rounded-lg bg-primary/10 text-[10px] font-black text-primary uppercase tracking-widest mb-4">Client Feedback</span>
+                <h2 className="text-4xl font-extrabold text-text-heading poly-sans-feel lg:text-5xl">What Our Partners Say</h2>
+                <p className="mt-6 text-lg text-text-body/70 max-w-2xl mx-auto">Real results from local business owners who partnered with us for local search dominance.</p>
+                <div className="mt-8 h-1.5 w-24 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {/* Review 1 */}
+                <div className="bg-white rounded-[2.5rem] border border-slate-200/60 p-8 md:p-10 shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 flex flex-col justify-between reveal reveal-up" style={{transitionDelay: "0.1s"}}>
+                    <div className="space-y-6">
+                        {/* Stars */}
+                        <div className="flex gap-1 text-primary">
+                            {[...Array(5)].map((_, i) => (
+                                <span key={i} className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                            ))}
+                        </div>
+                        <p className="text-sm md:text-base text-text-body/80 italic leading-relaxed">
+                            "JR Growth's developer-level SEO is on another level. Most agencies just gave us checklists, but Jatin optimized our site speed, structured schema, and Google Maps listing directly. Our local industrial inquiries have more than doubled."
+                        </p>
+                    </div>
+                    <div className="mt-8 pt-8 border-t border-slate-100 flex items-center gap-4">
+                        <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center font-black text-primary text-sm uppercase">
+                            SP
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-text-heading text-sm md:text-base">Shreeji Precast</h4>
+                            <p className="text-xs text-text-body/60 mt-0.5">Manish Patel, Director</p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Review 2 */}
+                <div className="bg-white rounded-[2.5rem] border border-slate-200/60 p-8 md:p-10 shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 flex flex-col justify-between reveal reveal-up" style={{transitionDelay: "0.2s"}}>
+                    <div className="space-y-6">
+                        {/* Stars */}
+                        <div className="flex gap-1 text-primary">
+                            {[...Array(5)].map((_, i) => (
+                                <span key={i} className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                            ))}
+                        </div>
+                        <p className="text-sm md:text-base text-text-body/80 italic leading-relaxed">
+                            "Their AI-driven Local SEO and Google Ads strategy helped us capture high-intent B2B leads. Our wholesale inquiry volume grew by 4.1x while lowering our overall acquisition costs. Jatin is a true local growth partner."
+                        </p>
+                    </div>
+                    <div className="mt-8 pt-8 border-t border-slate-100 flex items-center gap-4">
+                        <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center font-black text-primary text-sm uppercase">
+                            MR
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-text-heading text-sm md:text-base">Mega Retail Ltd.</h4>
+                            <p className="text-xs text-text-body/60 mt-0.5">Andrew Harris, Operations Head</p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Review 3 */}
+                <div className="bg-white rounded-[2.5rem] border border-slate-200/60 p-8 md:p-10 shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 flex flex-col justify-between reveal reveal-up" style={{transitionDelay: "0.3s"}}>
+                    <div className="space-y-6">
+                        {/* Stars */}
+                        <div className="flex gap-1 text-primary">
+                            {[...Array(5)].map((_, i) => (
+                                <span key={i} className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                            ))}
+                        </div>
+                        <p className="text-sm md:text-base text-text-body/80 italic leading-relaxed">
+                            "Our beauty clinic saw a massive 4.6x growth in appointment bookings after optimizing our Google Business Profile and local Ads. We are now the top-rated clinic in our area, generating consistent daily walk-ins."
+                        </p>
+                    </div>
+                    <div className="mt-8 pt-8 border-t border-slate-100 flex items-center gap-4">
+                        <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center font-black text-primary text-sm uppercase">
+                            AC
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-text-heading text-sm md:text-base">Anita Skin Clinic</h4>
+                            <p className="text-xs text-text-body/60 mt-0.5">Dr. Anita Sharma, Founder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     {/* Blog Feed Section (Dynamic) */}
     <section className="py-32 bg-white" id="blog">
         <div className="mx-auto max-w-7xl px-6">
@@ -947,56 +1108,178 @@ export default function Home() {
     <section className="py-32 bg-surface" id="faq">
         <div className="mx-auto max-w-4xl px-6">
             <div className="mb-16 text-center reveal reveal-up">
-                <h2 className="text-4xl font-extrabold text-text-heading poly-sans-feel lg:text-5xl">Frequently Asked
-                    Questions</h2>
+                <h2 className="text-4xl font-extrabold text-text-heading poly-sans-feel lg:text-5xl">Frequently Asked Questions</h2>
                 <div className="mt-4 h-1 w-20 bg-primary mx-auto rounded-full"></div>
             </div>
 
             <div className="space-y-4">
                 {/* FAQ Item 1 */}
                 <div className="reveal reveal-up group rounded-2xl bg-white border border-outline-variant/30 overflow-hidden"
-                    style={{transitionDelay: "0.1s"}}>
+                    style={{transitionDelay: "0.05s"}}>
                     <button className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
                         onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
-                        <span className="text-lg font-bold text-text-heading">How soon can I see results on Google
-                            Maps?</span>
+                        <span className="text-lg font-bold text-text-heading">How long does Local SEO take to show results?</span>
                         <span className="material-symbols-outlined arrow transition-transform">expand_more</span>
                     </button>
-                    <div className="hidden px-6 pb-6 text-text-body/70 leading-relaxed">
-                        While SEO is a long-term strategy, our technical GBP signal injections usually start showing
-                        visibility increases within the first 30 to 60 days. Major ranking shifts typically occur
-                        between months 3 and 6.
+                    <div className="hidden px-6 pb-6 text-text-body/70 leading-relaxed space-y-2">
+                        <p>Local SEO is a long-term growth strategy. Most businesses start seeing improvements in Google rankings and map visibility within 30–90 days, depending on competition, business location, and current website/GBP condition.</p>
+                        <p>For highly competitive industries like clinics, real estate, or salons, consistent monthly optimization is recommended for better long-term results.</p>
                     </div>
                 </div>
 
                 {/* FAQ Item 2 */}
                 <div className="reveal reveal-up group rounded-2xl bg-white border border-outline-variant/30 overflow-hidden"
-                    style={{transitionDelay: "0.2s"}}>
+                    style={{transitionDelay: "0.1s"}}>
                     <button className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
                         onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
-                        <span className="text-lg font-bold text-text-heading">Do you work with businesses outside of
-                            India?</span>
+                        <span className="text-lg font-bold text-text-heading">What is the difference between Local SEO and Google Business Profile Optimization?</span>
                         <span className="material-symbols-outlined arrow transition-transform">expand_more</span>
                     </button>
                     <div className="hidden px-6 pb-6 text-text-body/70 leading-relaxed">
-                        Yes, we specialize in high-competition international markets including the USA, UK, Canada, UAE,
-                        and Australia. Our systems are built to handle the technical nuances of global local search.
+                        <p className="mb-3">Local SEO focuses on improving your overall online visibility through:</p>
+                        <ul className="list-disc pl-5 mb-4 space-y-1">
+                            <li>Website optimization</li>
+                            <li>Local keywords</li>
+                            <li>Technical SEO</li>
+                            <li>Citations</li>
+                            <li>Local landing pages</li>
+                        </ul>
+                        <p className="mb-3">Google Business Profile (GBP) Optimization focuses specifically on improving your:</p>
+                        <ul className="list-disc pl-5 mb-4 space-y-1">
+                            <li>Google Maps ranking</li>
+                            <li>Business profile visibility</li>
+                            <li>Calls &amp; direction requests</li>
+                            <li>Reviews &amp; customer engagement</li>
+                        </ul>
+                        <p className="font-bold">Both services work best together for maximum local growth.</p>
                     </div>
                 </div>
 
                 {/* FAQ Item 3 */}
                 <div className="reveal reveal-up group rounded-2xl bg-white border border-outline-variant/30 overflow-hidden"
-                    style={{transitionDelay: "0.3s"}}>
+                    style={{transitionDelay: "0.15s"}}>
                     <button className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
                         onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
-                        <span className="text-lg font-bold text-text-heading">Is this a one-time setup or a monthly
-                            service?</span>
+                        <span className="text-lg font-bold text-text-heading">Can you help my business rank higher on Google Maps?</span>
                         <span className="material-symbols-outlined arrow transition-transform">expand_more</span>
                     </button>
                     <div className="hidden px-6 pb-6 text-text-body/70 leading-relaxed">
-                        We offer both. While our initial technical audit and setup create a strong foundation, the local
-                        search landscape is dynamic. Monthly optimization ensures you maintain rankings against
-                        aggressive competitors.
+                        <p className="mb-3">Yes. Our Google Business Profile optimization strategies are designed to improve your visibility in Google Maps and local search results by optimizing:</p>
+                        <ul className="list-disc pl-5 mb-4 space-y-1">
+                            <li>Business categories</li>
+                            <li>Services</li>
+                            <li>Local relevance</li>
+                            <li>Reviews</li>
+                            <li>Geo-targeting signals</li>
+                            <li>Engagement activity</li>
+                        </ul>
+                        <p>However, rankings also depend on competition, location, and business trust signals.</p>
+                    </div>
+                </div>
+
+                {/* FAQ Item 4 */}
+                <div className="reveal reveal-up group rounded-2xl bg-white border border-outline-variant/30 overflow-hidden"
+                    style={{transitionDelay: "0.2s"}}>
+                    <button className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+                        onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                        <span className="text-lg font-bold text-text-heading">Do you guarantee #1 rankings on Google?</span>
+                        <span className="material-symbols-outlined arrow transition-transform">expand_more</span>
+                    </button>
+                    <div className="hidden px-6 pb-6 text-text-body/70 leading-relaxed">
+                        <p className="mb-3">No ethical SEO expert can guarantee #1 rankings because Google’s algorithm constantly changes.</p>
+                        <p className="mb-3">What we guarantee is:</p>
+                        <ul className="list-disc pl-5 mb-4 space-y-1">
+                            <li>Transparent work</li>
+                            <li>Proven optimization strategies</li>
+                            <li>Regular reporting</li>
+                            <li>Consistent improvements</li>
+                            <li>Long-term local growth approach</li>
+                        </ul>
+                        <p className="font-bold">Our focus is on generating real business results — not fake promises.</p>
+                    </div>
+                </div>
+
+                {/* FAQ Item 5 */}
+                <div className="reveal reveal-up group rounded-2xl bg-white border border-outline-variant/30 overflow-hidden"
+                    style={{transitionDelay: "0.25s"}}>
+                    <button className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+                        onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                        <span className="text-lg font-bold text-text-heading">Is Google Ads better than SEO for getting leads?</span>
+                        <span className="material-symbols-outlined arrow transition-transform">expand_more</span>
+                    </button>
+                    <div className="hidden px-6 pb-6 text-text-body/70 leading-relaxed">
+                        <p className="mb-3">Google Ads gives faster results because your business can appear instantly in search results. Local SEO builds long-term organic visibility and trust over time.</p>
+                        <p className="mb-3 font-bold">Best strategy:</p>
+                        <ul className="list-disc pl-5 mb-4 space-y-1">
+                            <li>Google Ads for immediate leads</li>
+                            <li>Local SEO &amp; GBP optimization for long-term growth</li>
+                        </ul>
+                        <p>Using both together usually delivers the best ROI.</p>
+                    </div>
+                </div>
+
+                {/* FAQ Item 6 */}
+                <div className="reveal reveal-up group rounded-2xl bg-white border border-outline-variant/30 overflow-hidden"
+                    style={{transitionDelay: "0.3s"}}>
+                    <button className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+                        onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                        <span className="text-lg font-bold text-text-heading">Do I need a website for Local SEO or Google Business Profile optimization?</span>
+                        <span className="material-symbols-outlined arrow transition-transform">expand_more</span>
+                    </button>
+                    <div className="hidden px-6 pb-6 text-text-body/70 leading-relaxed">
+                        <p className="mb-3">A website is highly recommended for better rankings and credibility.</p>
+                        <p className="mb-3">However:</p>
+                        <ul className="list-disc pl-5 mb-4 space-y-1">
+                            <li>Google Business Profile optimization can still help businesses without a website.</li>
+                            <li>Businesses with optimized websites generally rank stronger and convert better.</li>
+                        </ul>
+                        <p>We can also guide you on improving your existing website for local search performance.</p>
+                    </div>
+                </div>
+
+                {/* FAQ Item 7 */}
+                <div className="reveal reveal-up group rounded-2xl bg-white border border-outline-variant/30 overflow-hidden"
+                    style={{transitionDelay: "0.35s"}}>
+                    <button className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+                        onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                        <span className="text-lg font-bold text-text-heading">Will I receive reports and updates on work progress?</span>
+                        <span className="material-symbols-outlined arrow transition-transform">expand_more</span>
+                    </button>
+                    <div className="hidden px-6 pb-6 text-text-body/70 leading-relaxed">
+                        <p className="mb-3">Yes. Transparency is a core part of JR Growth.</p>
+                        <p className="mb-3">Depending on your package, you’ll receive:</p>
+                        <ul className="list-disc pl-5 mb-4 space-y-1">
+                            <li>Ranking reports</li>
+                            <li>Google Business insights</li>
+                            <li>Lead &amp; traffic tracking</li>
+                            <li>Monthly performance updates</li>
+                            <li>Strategy recommendations</li>
+                        </ul>
+                        <p>Advanced plans also include dashboard-based reporting.</p>
+                    </div>
+                </div>
+
+                {/* FAQ Item 8 */}
+                <div className="reveal reveal-up group rounded-2xl bg-white border border-outline-variant/30 overflow-hidden"
+                    style={{transitionDelay: "0.4s"}}>
+                    <button className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+                        onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                        <span className="text-lg font-bold text-text-heading">Which businesses benefit the most from your services?</span>
+                        <span className="material-symbols-outlined arrow transition-transform">expand_more</span>
+                    </button>
+                    <div className="hidden px-6 pb-6 text-text-body/70 leading-relaxed">
+                        <p className="mb-3">Our services are ideal for local businesses that want more visibility, calls, and customers from Google.</p>
+                        <p className="mb-3 font-bold">Industries commonly benefiting include:</p>
+                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 list-disc pl-5">
+                            <li>Clinics &amp; Healthcare</li>
+                            <li>Salons &amp; Spas</li>
+                            <li>Restaurants &amp; Cafes</li>
+                            <li>Real Estate</li>
+                            <li>Gyms &amp; Fitness Centers</li>
+                            <li>Home Services</li>
+                            <li>Retail Stores</li>
+                            <li>Educational Institutes</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1304,6 +1587,106 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+
+                {/* Local SEO Service FAQs */}
+                <div className="border-t border-slate-200/60 pt-16 space-y-8">
+                    <div className="text-center md:text-left">
+                        <h3 className="text-2xl font-black text-primary-dark tracking-tight">Frequently Asked Questions</h3>
+                        <p className="text-xs font-semibold text-text-body/60 mt-1">Quick answers to common questions about our Local SEO systems.</p>
+                    </div>
+                    <div className="space-y-4">
+                        {/* FAQ 1 */}
+                        <div className="group rounded-2xl bg-slate-50 border border-slate-200/60 overflow-hidden">
+                            <button className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
+                                onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                                <span className="text-sm md:text-base font-bold text-text-heading">What is Local SEO and why does my business need it?</span>
+                                <span className="material-symbols-outlined arrow transition-transform text-slate-400">expand_more</span>
+                            </button>
+                            <div className="hidden px-5 pb-5 text-xs md:text-sm text-text-body/70 leading-relaxed space-y-2">
+                                <p>Local SEO helps your business appear in Google search results when nearby customers search for your services.</p>
+                                <p className="font-semibold">Example:</p>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    <li>“Dentist near me”</li>
+                                    <li>“Best salon in Surat”</li>
+                                    <li>“AC repair service nearby”</li>
+                                </ul>
+                                <p>It improves your local visibility, website traffic, calls, and customer inquiries.</p>
+                            </div>
+                        </div>
+
+                        {/* FAQ 2 */}
+                        <div className="group rounded-2xl bg-slate-50 border border-slate-200/60 overflow-hidden">
+                            <button className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
+                                onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                                <span className="text-sm md:text-base font-bold text-text-heading">How long does Local SEO take to work?</span>
+                                <span className="material-symbols-outlined arrow transition-transform text-slate-400">expand_more</span>
+                            </button>
+                            <div className="hidden px-5 pb-5 text-xs md:text-sm text-text-body/70 leading-relaxed space-y-2">
+                                <p>Most businesses start noticing improvements within 1–3 months.</p>
+                                <p>However, actual results depend on:</p>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    <li>Competition in your area</li>
+                                    <li>Website condition</li>
+                                    <li>Existing online presence</li>
+                                    <li>Industry competition</li>
+                                </ul>
+                                <p>Local SEO delivers better long-term results with consistent monthly optimization.</p>
+                            </div>
+                        </div>
+
+                        {/* FAQ 3 */}
+                        <div className="group rounded-2xl bg-slate-55 border border-slate-200/60 overflow-hidden">
+                            <button className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
+                                onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                                <span className="text-sm md:text-base font-bold text-text-heading">Can Local SEO help my business get more leads?</span>
+                                <span className="material-symbols-outlined arrow transition-transform text-slate-400">expand_more</span>
+                            </button>
+                            <div className="hidden px-5 pb-5 text-xs md:text-sm text-text-body/70 leading-relaxed space-y-2">
+                                <p>Yes. A properly optimized local SEO strategy helps attract customers actively searching for your services in your city or nearby areas.</p>
+                                <p>This can increase:</p>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    <li>Website visits</li>
+                                    <li>Phone calls</li>
+                                    <li>WhatsApp inquiries</li>
+                                    <li>Store visits</li>
+                                    <li>Service bookings</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        {/* FAQ 4 */}
+                        <div className="group rounded-2xl bg-slate-55 border border-slate-200/60 overflow-hidden">
+                            <button className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
+                                onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                                <span className="text-sm md:text-base font-bold text-text-heading">Do you work with businesses outside Surat?</span>
+                                <span className="material-symbols-outlined arrow transition-transform text-slate-400">expand_more</span>
+                            </button>
+                            <div className="hidden px-5 pb-5 text-xs md:text-sm text-text-body/70 leading-relaxed">
+                                <p>Yes. JR Growth works with businesses across India and can optimize local SEO for any target city or service area.</p>
+                            </div>
+                        </div>
+
+                        {/* FAQ 5 */}
+                        <div className="group rounded-2xl bg-slate-55 border border-slate-200/60 overflow-hidden">
+                            <button className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
+                                onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                                <span className="text-sm md:text-base font-bold text-text-heading">What makes JR Growth different from other SEO agencies?</span>
+                                <span className="material-symbols-outlined arrow transition-transform text-slate-400">expand_more</span>
+                            </button>
+                            <div className="hidden px-5 pb-5 text-xs md:text-sm text-text-body/70 leading-relaxed space-y-2">
+                                <p>JR Growth focuses on:</p>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    <li>AI-powered optimization systems</li>
+                                    <li>Developer-level technical SEO</li>
+                                    <li>Local business growth strategies</li>
+                                    <li>Transparent reporting</li>
+                                    <li>Real ranking &amp; lead-focused optimization</li>
+                                </ul>
+                                <p>We focus on measurable growth instead of generic SEO checklists.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div className="h-20 md:h-32"></div>
         </div>
@@ -1512,6 +1895,112 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+
+                {/* GBP Optimization FAQs */}
+                <div className="border-t border-slate-200/60 pt-16 space-y-8">
+                    <div className="text-center md:text-left">
+                        <h3 className="text-2xl font-black text-primary-dark tracking-tight">Frequently Asked Questions</h3>
+                        <p className="text-xs font-semibold text-text-body/60 mt-1">Quick answers to common questions about our GBP optimization systems.</p>
+                    </div>
+                    <div className="space-y-4">
+                        {/* FAQ 1 */}
+                        <div className="group rounded-2xl bg-slate-50 border border-slate-200/60 overflow-hidden">
+                            <button className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
+                                onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                                <span className="text-sm md:text-base font-bold text-text-heading">Why is Google Business Profile important for local businesses?</span>
+                                <span className="material-symbols-outlined arrow transition-transform text-slate-400">expand_more</span>
+                            </button>
+                            <div className="hidden px-5 pb-5 text-xs md:text-sm text-text-body/70 leading-relaxed space-y-2">
+                                <p>Your Google Business Profile helps customers find your business on:</p>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    <li>Google Maps</li>
+                                    <li>Local search results</li>
+                                    <li>“Near me” searches</li>
+                                </ul>
+                                <p>An optimized profile increases calls, direction requests, website clicks, and customer trust.</p>
+                            </div>
+                        </div>
+
+                        {/* FAQ 2 */}
+                        <div className="group rounded-2xl bg-slate-50 border border-slate-200/60 overflow-hidden">
+                            <button className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
+                                onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                                <span className="text-sm md:text-base font-bold text-text-heading">Can you help recover or optimize an existing Google Business Profile?</span>
+                                <span className="material-symbols-outlined arrow transition-transform text-slate-400">expand_more</span>
+                            </button>
+                            <div className="hidden px-5 pb-5 text-xs md:text-sm text-text-body/70 leading-relaxed space-y-2">
+                                <p>Yes. We can optimize existing profiles and also help with:</p>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    <li>Verification guidance</li>
+                                    <li>Incomplete profiles</li>
+                                    <li>Suspended profile guidance</li>
+                                    <li>Wrong categories</li>
+                                    <li>Weak rankings</li>
+                                    <li>Low engagement</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        {/* FAQ 3 */}
+                        <div className="group rounded-2xl bg-slate-55 border border-slate-200/60 overflow-hidden">
+                            <button className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
+                                onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                                <span className="text-sm md:text-base font-bold text-text-heading">How do reviews affect Google Maps rankings?</span>
+                                <span className="material-symbols-outlined arrow transition-transform text-slate-400">expand_more</span>
+                            </button>
+                            <div className="hidden px-5 pb-5 text-xs md:text-sm text-text-body/70 leading-relaxed space-y-2">
+                                <p>Reviews are one of the strongest local trust signals.</p>
+                                <p>Regular positive reviews help improve:</p>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    <li>Customer trust</li>
+                                    <li>Local authority</li>
+                                    <li>Google Maps visibility</li>
+                                    <li>Click-through rates</li>
+                                </ul>
+                                <p>We also help optimize review response strategies for better engagement.</p>
+                            </div>
+                        </div>
+
+                        {/* FAQ 4 */}
+                        <div className="group rounded-2xl bg-slate-55 border border-slate-200/60 overflow-hidden">
+                            <button className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
+                                onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                                <span className="text-sm md:text-base font-bold text-text-heading">How often should a Google Business Profile be updated?</span>
+                                <span className="material-symbols-outlined arrow transition-transform text-slate-400">expand_more</span>
+                            </button>
+                            <div className="hidden px-5 pb-5 text-xs md:text-sm text-text-body/70 leading-relaxed space-y-2">
+                                <p>Google prefers active business profiles.</p>
+                                <p>Regular updates like:</p>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    <li>Posts</li>
+                                    <li>Photos</li>
+                                    <li>Review responses</li>
+                                    <li>Service updates</li>
+                                </ul>
+                                <p>help improve engagement and local ranking signals.</p>
+                            </div>
+                        </div>
+
+                        {/* FAQ 5 */}
+                        <div className="group rounded-2xl bg-slate-55 border border-slate-200/60 overflow-hidden">
+                            <button className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
+                                onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                                <span className="text-sm md:text-base font-bold text-text-heading">Can Google Business Profile optimization increase calls and inquiries?</span>
+                                <span className="material-symbols-outlined arrow transition-transform text-slate-400">expand_more</span>
+                            </button>
+                            <div className="hidden px-5 pb-5 text-xs md:text-sm text-text-body/70 leading-relaxed space-y-2">
+                                <p>Yes. A properly optimized profile can significantly improve:</p>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    <li>Phone calls</li>
+                                    <li>Website clicks</li>
+                                    <li>Direction requests</li>
+                                    <li>Customer interactions</li>
+                                </ul>
+                                <p>especially for businesses relying on local customers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div className="h-20 md:h-32"></div>
         </div>
@@ -1715,6 +2204,112 @@ export default function Home() {
                                     <div className="text-[10px] font-black uppercase text-slate-400 tracking-wider">Focus Areas</div>
                                     <div className="text-xs font-bold text-text-heading mt-1">Tier-2 Cities & SMBs</div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Google Ads Service FAQs */}
+                <div className="border-t border-slate-200/60 pt-16 space-y-8">
+                    <div className="text-center md:text-left">
+                        <h3 className="text-2xl font-black text-primary-dark tracking-tight">Frequently Asked Questions</h3>
+                        <p className="text-xs font-semibold text-text-body/60 mt-1">Quick answers to common questions about our Google Ads systems.</p>
+                    </div>
+                    <div className="space-y-4">
+                        {/* FAQ 1 */}
+                        <div className="group rounded-2xl bg-slate-50 border border-slate-200/60 overflow-hidden">
+                            <button className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
+                                onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                                <span className="text-sm md:text-base font-bold text-text-heading">How quickly can Google Ads generate leads?</span>
+                                <span className="material-symbols-outlined arrow transition-transform text-slate-400">expand_more</span>
+                            </button>
+                            <div className="hidden px-5 pb-5 text-xs md:text-sm text-text-body/70 leading-relaxed space-y-2">
+                                <p>Google Ads can start generating traffic and leads within days after campaign launch.</p>
+                                <p>However, proper optimization is important for:</p>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    <li>Better lead quality</li>
+                                    <li>Lower cost-per-click</li>
+                                    <li>Better ROI</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        {/* FAQ 2 */}
+                        <div className="group rounded-2xl bg-slate-50 border border-slate-200/60 overflow-hidden">
+                            <button className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
+                                onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                                <span className="text-sm md:text-base font-bold text-text-heading">What budget do I need to run Google Ads?</span>
+                                <span className="material-symbols-outlined arrow transition-transform text-slate-400">expand_more</span>
+                            </button>
+                            <div className="hidden px-5 pb-5 text-xs md:text-sm text-text-body/70 leading-relaxed space-y-2">
+                                <p>The ideal budget depends on:</p>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    <li>Your industry</li>
+                                    <li>Competition</li>
+                                    <li>Target location</li>
+                                    <li>Lead goals</li>
+                                </ul>
+                                <p>For most local businesses in India, a starting ad budget of ₹15,000–₹50,000/month works well.</p>
+                            </div>
+                        </div>
+
+                        {/* FAQ 3 */}
+                        <div className="group rounded-2xl bg-slate-55 border border-slate-200/60 overflow-hidden">
+                            <button className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
+                                onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                                <span className="text-sm md:text-base font-bold text-text-heading">Do I need a landing page or website for Google Ads?</span>
+                                <span className="material-symbols-outlined arrow transition-transform text-slate-400">expand_more</span>
+                            </button>
+                            <div className="hidden px-5 pb-5 text-xs md:text-sm text-text-body/70 leading-relaxed space-y-2">
+                                <p>Yes, having a proper landing page or website improves:</p>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    <li>Ad performance</li>
+                                    <li>Conversion rates</li>
+                                    <li>Quality Score</li>
+                                    <li>Lead generation</li>
+                                </ul>
+                                <p>We also provide landing page optimization suggestions for better results.</p>
+                            </div>
+                        </div>
+
+                        {/* FAQ 4 */}
+                        <div className="group rounded-2xl bg-slate-55 border border-slate-200/60 overflow-hidden">
+                            <button className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
+                                onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                                <span className="text-sm md:text-base font-bold text-text-heading">Will I receive reports for my Google Ads campaigns?</span>
+                                <span className="material-symbols-outlined arrow transition-transform text-slate-400">expand_more</span>
+                            </button>
+                            <div className="hidden px-5 pb-5 text-xs md:text-sm text-text-body/70 leading-relaxed space-y-2">
+                                <p>Yes. You’ll receive regular performance updates including:</p>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    <li>Clicks</li>
+                                    <li>Leads</li>
+                                    <li>Cost per lead</li>
+                                    <li>Conversion tracking</li>
+                                    <li>Campaign performance insights</li>
+                                </ul>
+                                <p>Advanced plans also include ROI-focused reporting dashboards.</p>
+                            </div>
+                        </div>
+
+                        {/* FAQ 5 */}
+                        <div className="group rounded-2xl bg-slate-55 border border-slate-200/60 overflow-hidden">
+                            <button className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
+                                onClick={(e) => { e.currentTarget.nextElementSibling?.classList.toggle('hidden'); e.currentTarget.querySelector('.arrow')?.classList.toggle('rotate-180'); }}>
+                                <span className="text-sm md:text-base font-bold text-text-heading">Why are my previous Google Ads campaigns not performing well?</span>
+                                <span className="material-symbols-outlined arrow transition-transform text-slate-400">expand_more</span>
+                            </button>
+                            <div className="hidden px-5 pb-5 text-xs md:text-sm text-text-body/70 leading-relaxed space-y-2">
+                                <p>Common reasons include:</p>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    <li>Poor targeting</li>
+                                    <li>Weak ad copy</li>
+                                    <li>Incorrect keywords</li>
+                                    <li>No conversion tracking</li>
+                                    <li>Bad landing pages</li>
+                                    <li>Lack of optimization</li>
+                                </ul>
+                                <p>JR Growth focuses on data-driven optimization and continuous improvements to maximize ad performance and lead quality.</p>
                             </div>
                         </div>
                     </div>
