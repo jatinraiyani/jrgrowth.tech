@@ -135,7 +135,7 @@ export default function Home() {
                     </h1>
                     <div className="mb-10 text-lg leading-relaxed text-text-body/80 lg:text-xl space-y-4">
                         <p>
-                            JR Growth is an AI-powered Local SEO and Google Business Profile optimization agency helping businesses improve Google Maps visibility, local search rankings, and customer acquisition through advanced SEO systems and performance-driven Google Ads strategies.
+                            JR Growth is an AI-Powered Local SEO & Google Business Growth Partner for Indian Local Businesses. We help local businesses rank higher in local searches, appear in Google Maps, and generate more calls from nearby customers through developer-level optimization, AI-driven tracking, and ROI-focused Google Ads.
                         </p>
                         <p>
                             We specialize in building scalable local growth systems for: healthcare businesses, home service companies, restaurants, clinics, legal firms, construction businesses, real estate companies, beauty clinics, and multi-location local brands.
@@ -1104,15 +1104,15 @@ export default function Home() {
     {/* SEO Systems Modal */}
     <div id="seo-modal" className="fixed inset-0 z-[100] hidden">
         <div className="absolute inset-0 bg-primary-dark/40 backdrop-blur-md transition-opacity duration-500" onClick={() => closeModal('seo-modal')}></div>
-        <div className="absolute right-0 top-0 h-full w-full max-w-4xl bg-white shadow-2xl transition-transform duration-500 translate-x-full overflow-y-auto custom-scrollbar" id="seo-modal-content">
-            <div className="sticky top-0 z-20 flex items-center justify-between bg-white/90 p-4 md:p-8 backdrop-blur-md border-b border-slate-50">
+        <div className="absolute right-0 top-0 h-full w-full max-w-5xl bg-white shadow-2xl transition-transform duration-500 translate-x-full overflow-y-auto custom-scrollbar" id="seo-modal-content">
+            <div className="sticky top-0 z-20 flex items-center justify-between bg-white/90 p-4 md:p-8 backdrop-blur-md border-b border-slate-150">
                 <div className="flex items-center gap-3">
                     <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-primary flex items-center justify-center text-white">
                         <span className="material-symbols-outlined text-xl md:text-2xl">psychology</span>
                     </div>
                     <div>
-                        <h2 className="text-lg md:text-xl font-black text-primary-dark uppercase tracking-tight">AI Powered SEO</h2>
-                        <p className="text-[9px] md:text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">Technical Framework v4.2</p>
+                        <h2 className="text-lg md:text-xl font-black text-primary-dark uppercase tracking-tight">Local SEO Services</h2>
+                        <p className="text-[9px] md:text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">Rank Higher in Local Search</p>
                     </div>
                 </div>
                 <button onClick={() => closeModal('seo-modal')} className="group flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 transition-all hover:bg-red-50 hover:text-red-500">
@@ -1120,72 +1120,190 @@ export default function Home() {
                 </button>
             </div>
 
-            <div className="p-6 md:p-12 lg:p-20 space-y-16 md:space-y-24">
-                <section>
-                    <h3 className="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-6">The Evolution of Search</h3>
-                    <div className="space-y-6">
-                        <p className="text-xl md:text-3xl font-black text-primary-dark leading-tight">Modern Local SEO is no longer just about keywords or backlinks.</p>
-                        <p className="text-sm md:text-base text-slate-500 font-medium leading-relaxed">Google now evaluates local businesses based on search intent, technical infrastructure, and behavioral trust signals. Our AI-powered system is designed to dominate these modern ranking factors.</p>
-                    </div>
+            <div className="p-6 md:p-12 lg:p-16 space-y-12">
+                <section className="space-y-4">
+                    <h1 className="text-xl md:text-3xl font-black text-primary-dark leading-tight">Local SEO Services For Indian Businesses</h1>
+                    <p className="text-sm md:text-base text-slate-500 font-medium leading-relaxed max-w-3xl">Rank higher in local searches, appear in Google Maps, and generate more calls from nearby customers. We use developer-level optimization + AI systems to improve rankings faster instead of using generic checklists.</p>
                 </section>
 
-                <section className="p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] bg-[#185441] text-white relative overflow-hidden">
-                    <div className="relative z-10">
-                        <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#c7fbe8] mb-8">Optimization Approach</h3>
-                        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-                            <ul className="space-y-3 md:space-y-4">
-                                <li className="flex items-center gap-3 text-xs md:text-sm font-bold tracking-tight"><span className="h-1 w-1 rounded-full bg-[#c7fbe8]"></span>AI-Driven Search Analysis</li>
-                                <li className="flex items-center gap-3 text-xs md:text-sm font-bold tracking-tight"><span className="h-1 w-1 rounded-full bg-[#c7fbe8]"></span>Local Competitor Intelligence</li>
-                                <li className="flex items-center gap-3 text-xs md:text-sm font-bold tracking-tight"><span className="h-1 w-1 rounded-full bg-[#c7fbe8]"></span>Technical SEO Systems</li>
-                                <li className="flex items-center gap-3 text-xs md:text-sm font-bold tracking-tight"><span className="h-1 w-1 rounded-full bg-[#c7fbe8]"></span>Structured Data Architecture</li>
-                                <li className="flex items-center gap-3 text-xs md:text-sm font-bold tracking-tight"><span className="h-1 w-1 rounded-full bg-[#c7fbe8]"></span>Semantic Entity Optimization</li>
-                                <li className="flex items-center gap-3 text-xs md:text-sm font-bold tracking-tight"><span className="h-1 w-1 rounded-full bg-[#c7fbe8]"></span>High-Authority Link Assets</li>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {/* Package 1 */}
+                    <div className="bg-slate-50/50 rounded-3xl p-6 md:p-8 border border-slate-200/60 flex flex-col justify-between hover:border-primary/20 hover:shadow-xl hover:shadow-slate-100 transition-all duration-300 relative group">
+                        <div className="space-y-6">
+                            <div>
+                                <span className="inline-block px-3 py-1.5 rounded-lg bg-slate-200/60 text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4">Best For: New or weak local presence</span>
+                                <h3 className="text-2xl font-black text-text-heading tracking-tight">Starter Visibility</h3>
+                                <div className="text-3xl font-black text-primary mt-2">₹7,999 <span className="text-xs font-bold text-slate-400 lowercase">One-Time Setup</span></div>
+                            </div>
+                            
+                            <div className="border-t border-slate-200/60 pt-6">
+                                <h4 className="text-xs font-black uppercase text-slate-400 tracking-widest mb-4">What's Included:</h4>
+                                <ul className="space-y-3.5">
+                                    {[
+                                        "Local SEO Audit",
+                                        "Website On-Page Optimization",
+                                        "Google Indexing Check",
+                                        "Meta Title & Description Optimization",
+                                        "Up to 5 Local Keywords Targeting",
+                                        "Google Map Embedding",
+                                        "Local Schema Setup",
+                                        "NAP Consistency Setup",
+                                        "Basic Technical SEO Fixes",
+                                        "Local Citation Submission",
+                                        "Search Console & Analytics Setup",
+                                        "Initial Ranking Report"
+                                    ].map((item, idx) => (
+                                        <li key={idx} className="flex items-start gap-3 text-xs md:text-sm font-semibold text-text-body/80">
+                                            <span className="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div className="space-y-6 mt-8">
+                            <div className="grid grid-cols-2 gap-4 border-t border-slate-100 pt-6 text-[10px] font-bold uppercase text-slate-400">
+                                <div>
+                                    <div>Timeline</div>
+                                    <div className="text-xs font-bold text-text-heading mt-1">10-15 Days</div>
+                                </div>
+                                <div>
+                                    <div>Reporting</div>
+                                    <div className="text-xs font-bold text-text-heading mt-1">Initial Ranking Report</div>
+                                </div>
+                            </div>
+                            <div className="p-5 rounded-2xl bg-primary/5 border border-primary/10">
+                                <div className="text-[10px] font-black uppercase text-primary tracking-widest mb-1.5">Expected Outcome:</div>
+                                <p className="text-xs font-semibold text-primary-dark/80 leading-relaxed">Better Google visibility, stronger local relevance, and improved indexing & search presence.</p>
+                            </div>
+                            <a href="https://wa.me/917229089082?text=Hi%20Jatin,%20I'm%20interested%20in%20the%20Starter%20Visibility%20package%20(₹7,999%20one-time)%20for%20my%20business." target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-primary text-white rounded-2xl font-black text-xs uppercase tracking-widest text-center block transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/10 active:scale-98">Start Local Visibility</a>
+                        </div>
+                    </div>
+
+                    {/* Package 2 */}
+                    <div className="bg-white rounded-3xl p-6 md:p-8 border-2 border-primary/20 flex flex-col justify-between shadow-xl shadow-primary/5 relative group">
+                        <div className="absolute -top-3.5 right-6 px-4 py-1.5 rounded-full bg-primary text-white text-[9px] font-black uppercase tracking-widest">Recommended</div>
+                        <div className="space-y-6">
+                            <div>
+                                <span className="inline-block px-3 py-1.5 rounded-lg bg-primary/10 text-[10px] font-black text-primary uppercase tracking-widest mb-4">Best For: Consistent local leads & rankings</span>
+                                <h3 className="text-2xl font-black text-text-heading tracking-tight">Local Growth Engine</h3>
+                                <div className="text-3xl font-black text-primary mt-2">₹14,999 - ₹18,999 <span className="text-xs font-bold text-slate-400 lowercase">/ Month</span></div>
+                            </div>
+                            
+                            <div className="border-t border-slate-200/60 pt-6">
+                                <h4 className="text-xs font-black uppercase text-slate-400 tracking-widest mb-4">What's Included:</h4>
+                                <ul className="space-y-3.5">
+                                    {[
+                                        "Everything in Starter Package",
+                                        "Monthly Local SEO Optimization",
+                                        "Competitor Analysis",
+                                        "Advanced Technical SEO",
+                                        "Speed Optimization",
+                                        "Local Landing Page Optimization",
+                                        "Hyperlocal Keyword Expansion",
+                                        "Authority Citation Building",
+                                        "AI-Based SEO Tracking",
+                                        "Monthly Ranking Improvements",
+                                        "Conversion Optimization Suggestions",
+                                        "Google Business Profile Coordination",
+                                        "Monthly Performance Dashboard",
+                                        "Video Reporting Support"
+                                    ].map((item, idx) => (
+                                        <li key={idx} className="flex items-start gap-3 text-xs md:text-sm font-semibold text-text-body/80">
+                                            <span className="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div className="space-y-6 mt-8">
+                            <div className="grid grid-cols-2 gap-4 border-t border-slate-100 pt-6 text-[10px] font-bold uppercase text-slate-400">
+                                <div>
+                                    <div>Timeline</div>
+                                    <div className="text-xs font-bold text-text-heading mt-1">Monthly Growth</div>
+                                </div>
+                                <div>
+                                    <div>Reporting</div>
+                                    <div className="text-xs font-bold text-text-heading mt-1">Dashboard + Video Reports</div>
+                                </div>
+                            </div>
+                            <div className="p-5 rounded-2xl bg-primary/5 border border-primary/10">
+                                <div className="text-[10px] font-black uppercase text-primary tracking-widest mb-1.5">Expected Outcome:</div>
+                                <p className="text-xs font-semibold text-primary-dark/80 leading-relaxed">Higher local keyword rankings, increased website calls & leads, better visibility in nearby areas, and stronger Google trust signals.</p>
+                            </div>
+                            <a href="https://wa.me/917229089082?text=Hi%20Jatin,%20I'm%20interested%20in%20the%20Local%20Growth%20Engine%20package%20(₹14,999%20-%20₹18,999/month)%20for%20my%20business." target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-primary text-white rounded-2xl font-black text-xs uppercase tracking-widest text-center block transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/10 active:scale-98">Grow My Local SEO</a>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Trust & E-E-A-T Section */}
+                <div className="border-t border-slate-200/60 pt-16 space-y-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        {/* Why JR Growth */}
+                        <div className="space-y-6">
+                            <h3 className="text-sm font-black text-primary uppercase tracking-widest flex items-center gap-2 font-label">
+                                <span className="material-symbols-outlined text-lg">verified_user</span> Why JR Growth?
+                            </h3>
+                            <ul className="space-y-4">
+                                {[
+                                    { title: "AI-Powered Optimization Systems", desc: "We use machine learning to analyze search patterns and identify instant ranking gaps." },
+                                    { title: "Developer-Level Technical SEO Expertise", desc: "No generic checklists. We directly optimize site speeds, rendering, schema structures, and code." },
+                                    { title: "Transparent Reporting", desc: "Get real video reports explaining ranking growth and call metrics—no vanity metrics." },
+                                    { title: "Local Business Growth Focused", desc: "We focus on outcomes that matter to business owners: calls, direction requests, and inquiries." },
+                                    { title: "No Fake Promises", desc: "We deliver data-driven optimization and real rankings, never selling overnight miracles." },
+                                    { title: "Data-Driven Strategy", desc: "Every action is backed by competitor intelligence, ranking heatmaps, and search volume insights." },
+                                    { title: "Personalized Growth Plans", desc: "Custom optimization strategies tailored specifically for your city, industry, and business goals." }
+                                ].map((item, idx) => (
+                                    <li key={idx} className="space-y-1">
+                                        <div className="text-sm font-bold text-text-heading flex items-center gap-2">
+                                            <span className="h-1.5 w-1.5 rounded-full bg-primary"></span> {item.title}
+                                        </div>
+                                        <p className="text-xs text-text-body/70 pl-3.5 leading-relaxed">{item.desc}</p>
+                                    </li>
+                                ))}
                             </ul>
-                            <div className="flex flex-col justify-center gap-4">
-                                <div className="p-4 rounded-2xl bg-white/10 border border-white/20 text-center">
-                                    <p className="text-2xl font-black">Entity Flow</p>
-                                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#c7fbe8]">Local Relevance Matrix</p>
+                        </div>
+
+                        {/* Industries We Grow */}
+                        <div className="space-y-6">
+                            <h3 className="text-sm font-black text-primary uppercase tracking-widest flex items-center gap-2 font-label">
+                                <span className="material-symbols-outlined text-lg">storefront</span> Industries We Work With
+                            </h3>
+                            <p className="text-xs font-semibold text-text-body/60 leading-relaxed mb-4">We specialize in building custom local visibility systems across these highly competitive niches:</p>
+                            <div className="flex flex-wrap gap-2.5">
+                                {[
+                                    "Clinics & Doctors",
+                                    "Salons & Spas",
+                                    "Real Estate",
+                                    "Restaurants & Cafes",
+                                    "Gyms & Fitness Centers",
+                                    "Home Service Businesses",
+                                    "Local Retail Stores",
+                                    "Educational Institutes"
+                                ].map((item, idx) => (
+                                    <span key={idx} className="px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-600 transition-colors hover:bg-primary/5 hover:text-primary hover:border-primary/20 cursor-default">
+                                        {item}
+                                    </span>
+                                ))}
+                            </div>
+                            
+                            {/* Service Delivery Specs */}
+                            <div className="border-t border-slate-100 pt-6 mt-6 grid grid-cols-2 gap-4">
+                                <div>
+                                    <div className="text-[10px] font-black uppercase text-slate-400 tracking-wider">Service Mode</div>
+                                    <div className="text-xs font-bold text-text-heading mt-1">Local Growth Partner</div>
+                                </div>
+                                <div>
+                                    <div className="text-[10px] font-black uppercase text-slate-400 tracking-wider">Focus Areas</div>
+                                    <div className="text-xs font-bold text-text-heading mt-1">Tier-2 Cities & SMBs</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-
-                <section>
-                    <div className="flex items-center justify-between mb-10 md:mb-12">
-                        <h3 className="text-[10px] font-black text-primary uppercase tracking-[0.3em]">Core Deliverables</h3>
-                        <span className="h-px flex-1 bg-slate-100 mx-4 md:mx-8"></span>
-                    </div>
-                    <div className="grid sm:grid-cols-2 gap-x-12 gap-y-4 md:gap-y-6">
-                        <div className="flex items-center gap-3 md:gap-4 group/list cursor-default">
-                            <div className="h-7 w-7 md:h-8 md:w-8 rounded-lg md:rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover/list:bg-primary group-hover/list:text-white transition-all"><span className="material-symbols-outlined text-[16px] md:text-[18px]">check_circle</span></div>
-                            <span className="text-xs md:text-sm font-bold text-primary-dark group-hover/list:translate-x-1 transition-transform">Advanced GSC Integration</span>
-                        </div>
-                        <div className="flex items-center gap-3 md:gap-4 group/list cursor-default">
-                            <div className="h-7 w-7 md:h-8 md:w-8 rounded-lg md:rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover/list:bg-primary group-hover/list:text-white transition-all"><span className="material-symbols-outlined text-[16px] md:text-[18px]">check_circle</span></div>
-                            <span className="text-xs md:text-sm font-bold text-primary-dark group-hover/list:translate-x-1 transition-transform">Schema Markup Injection</span>
-                        </div>
-                        <div className="flex items-center gap-3 md:gap-4 group/list cursor-default">
-                            <div className="h-7 w-7 md:h-8 md:w-8 rounded-lg md:rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover/list:bg-primary group-hover/list:text-white transition-all"><span className="material-symbols-outlined text-[16px] md:text-[18px]">check_circle</span></div>
-                            <span className="text-xs md:text-sm font-bold text-primary-dark group-hover/list:translate-x-1 transition-transform">Core Web Vitals Opt</span>
-                        </div>
-                        <div className="flex items-center gap-3 md:gap-4 group/list cursor-default">
-                            <div className="h-7 w-7 md:h-8 md:w-8 rounded-lg md:rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover/list:bg-primary group-hover/list:text-white transition-all"><span className="material-symbols-outlined text-[16px] md:text-[18px]">check_circle</span></div>
-                            <span className="text-xs md:text-sm font-bold text-primary-dark group-hover/list:translate-x-1 transition-transform">Localized Landing Pages</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="bg-primary p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] text-white flex flex-col md:flex-row gap-6 md:gap-8 items-center justify-between">
-                    <div className="text-center md:text-left">
-                        <p className="text-[10px] font-black uppercase tracking-widest text-primary-light mb-2">Technical Audit</p>
-                        <h4 className="text-xl md:text-2xl font-black tracking-tight leading-tight">Ready to dominate local search?</h4>
-                    </div>
-                    <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 w-full md:w-auto">
-                        <a href="https://wa.me/917229089082" className="flex items-center justify-center gap-2 rounded-xl md:rounded-2xl bg-white px-6 md:px-8 py-3 md:py-4 text-[10px] md:text-xs font-black text-primary uppercase tracking-widest shadow-xl transition-all hover:scale-105 active:scale-95"><span className="material-symbols-outlined text-lg">chat</span>WhatsApp</a>
-                        <a href="mailto:jatin@jrgrowth.tech" className="flex items-center justify-center gap-2 rounded-xl md:rounded-2xl bg-primary-dark px-6 md:px-8 py-3 md:py-4 text-[10px] md:text-xs font-black text-white uppercase tracking-widest transition-all hover:bg-black active:scale-95"><span className="material-symbols-outlined text-lg">mail</span>Email Strategy</a>
-                    </div>
-                </section>
+                </div>
             </div>
             <div className="h-20 md:h-32"></div>
         </div>
@@ -1194,15 +1312,15 @@ export default function Home() {
     {/* GBP Systems Modal */}
     <div id="gbp-modal" className="fixed inset-0 z-[100] hidden">
         <div className="absolute inset-0 bg-primary-dark/40 backdrop-blur-md transition-opacity duration-500" onClick={() => closeModal('gbp-modal')}></div>
-        <div className="absolute right-0 top-0 h-full w-full max-w-4xl bg-white shadow-2xl transition-transform duration-500 translate-x-full overflow-y-auto custom-scrollbar" id="gbp-modal-content">
-            <div className="sticky top-0 z-20 flex items-center justify-between bg-white/90 p-4 md:p-8 backdrop-blur-md border-b border-slate-50">
+        <div className="absolute right-0 top-0 h-full w-full max-w-5xl bg-white shadow-2xl transition-transform duration-500 translate-x-full overflow-y-auto custom-scrollbar" id="gbp-modal-content">
+            <div className="sticky top-0 z-20 flex items-center justify-between bg-white/90 p-4 md:p-8 backdrop-blur-md border-b border-slate-150">
                 <div className="flex items-center gap-3">
                     <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-primary flex items-center justify-center text-white">
                         <span className="material-symbols-outlined text-xl md:text-2xl">storefront</span>
                     </div>
                     <div>
-                        <h2 className="text-lg md:text-xl font-black text-primary-dark uppercase tracking-tight">GBP Optimization</h2>
-                        <p className="text-[9px] md:text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">Visibility Framework v3.1</p>
+                        <h2 className="text-lg md:text-xl font-black text-primary-dark uppercase tracking-tight">Google Business Profile Optimization Services</h2>
+                        <p className="text-[9px] md:text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">Build Local Customer Trust</p>
                     </div>
                 </div>
                 <button onClick={() => closeModal('gbp-modal')} className="group flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 transition-all hover:bg-red-50 hover:text-red-500">
@@ -1210,72 +1328,190 @@ export default function Home() {
                 </button>
             </div>
 
-            <div className="p-6 md:p-12 lg:p-20 space-y-16 md:space-y-24">
-                <section>
-                    <h3 className="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-6">The Front Door of Your Business</h3>
-                    <div className="space-y-6">
-                        <p className="text-xl md:text-3xl font-black text-primary-dark leading-tight">Most businesses barely optimize their Google Business Profile.</p>
-                        <p className="text-sm md:text-base text-slate-500 font-medium leading-relaxed">Google evaluates profile completeness, category relevance, engagement activity, and review quality. We build strategic GBP optimization systems designed to improve Maps visibility and increase customer trust.</p>
-                    </div>
+            <div className="p-6 md:p-12 lg:p-16 space-y-12">
+                <section className="space-y-4">
+                    <h1 className="text-xl md:text-3xl font-black text-primary-dark leading-tight">Google Business Profile Optimization Services</h1>
+                    <p className="text-sm md:text-base text-slate-500 font-medium leading-relaxed max-w-3xl">Improve your Google Maps ranking and turn your business profile into a lead-generation machine. We verify, optimize, and build local authority signals that make Google recommend you over competitors.</p>
                 </section>
 
-                <section className="p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] bg-[#185441] text-white relative overflow-hidden">
-                    <div className="relative z-10">
-                        <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#c7fbe8] mb-8">Growth Systems</h3>
-                        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-                            <ul className="space-y-3 md:space-y-4">
-                                <li className="flex items-center gap-3 text-xs md:text-sm font-bold tracking-tight"><span className="h-1 w-1 rounded-full bg-[#c7fbe8]"></span>Google Maps Ranking Optimization</li>
-                                <li className="flex items-center gap-3 text-xs md:text-sm font-bold tracking-tight"><span className="h-1 w-1 rounded-full bg-[#c7fbe8]"></span>AI-Driven Competitor Analysis</li>
-                                <li className="flex items-center gap-3 text-xs md:text-sm font-bold tracking-tight"><span className="h-1 w-1 rounded-full bg-[#c7fbe8]"></span>Review Growth Strategies</li>
-                                <li className="flex items-center gap-3 text-xs md:text-sm font-bold tracking-tight"><span className="h-1 w-1 rounded-full bg-[#c7fbe8]"></span>Local Engagement Optimization</li>
-                                <li className="flex items-center gap-3 text-xs md:text-sm font-bold tracking-tight"><span className="h-1 w-1 rounded-full bg-[#c7fbe8]"></span>Geo-Tagged Media Injection</li>
-                                <li className="flex items-center gap-3 text-xs md:text-sm font-bold tracking-tight"><span className="h-1 w-1 rounded-full bg-[#c7fbe8]"></span>NAP Consistency Management</li>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {/* Package 1 */}
+                    <div className="bg-slate-50/50 rounded-3xl p-6 md:p-8 border border-slate-200/60 flex flex-col justify-between hover:border-primary/20 hover:shadow-xl hover:shadow-slate-100 transition-all duration-300 relative group">
+                        <div className="space-y-6">
+                            <div>
+                                <span className="inline-block px-3 py-1.5 rounded-lg bg-slate-200/60 text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4">Best For: Incomplete or poorly optimized profiles</span>
+                                <h3 className="text-2xl font-black text-text-heading tracking-tight">GBP Setup & Optimization</h3>
+                                <div className="text-3xl font-black text-primary mt-2">₹4,999 - ₹6,999 <span className="text-xs font-bold text-slate-400 lowercase">One-Time Setup</span></div>
+                            </div>
+                            
+                            <div className="border-t border-slate-200/60 pt-6">
+                                <h4 className="text-xs font-black uppercase text-slate-400 tracking-widest mb-4">What's Included:</h4>
+                                <ul className="space-y-3.5">
+                                    {[
+                                        "Complete GBP Audit",
+                                        "Profile Optimization",
+                                        "Primary & Secondary Category Setup",
+                                        "Services Optimization",
+                                        "Business Description Optimization",
+                                        "SEO-Friendly Keywords Addition",
+                                        "Image Optimization",
+                                        "Geotagged Image Uploads",
+                                        "Review Link Setup",
+                                        "FAQ Setup",
+                                        "Verification Assistance",
+                                        "Spam Protection Basics"
+                                    ].map((item, idx) => (
+                                        <li key={idx} className="flex items-start gap-3 text-xs md:text-sm font-semibold text-text-body/80">
+                                            <span className="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div className="space-y-6 mt-8">
+                            <div className="grid grid-cols-2 gap-4 border-t border-slate-100 pt-6 text-[10px] font-bold uppercase text-slate-400">
+                                <div>
+                                    <div>Timeline</div>
+                                    <div className="text-xs font-bold text-text-heading mt-1">7-10 Days</div>
+                                </div>
+                                <div>
+                                    <div>Reporting</div>
+                                    <div className="text-xs font-bold text-text-heading mt-1">Optimization Summary</div>
+                                </div>
+                            </div>
+                            <div className="p-5 rounded-2xl bg-primary/5 border border-primary/10">
+                                <div className="text-[10px] font-black uppercase text-primary tracking-widest mb-1.5">Expected Outcome:</div>
+                                <p className="text-xs font-semibold text-primary-dark/80 leading-relaxed">Improved Maps visibility, better customer trust, and stronger profile completeness.</p>
+                            </div>
+                            <a href="https://wa.me/917229089082?text=Hi%20Jatin,%20I'm%20interested%20in%20the%20GBP%20Setup%20%26%20Optimization%20package%20(₹4,999%20-%20₹6,999%20one-time)%20for%20my%20business." target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-primary text-white rounded-2xl font-black text-xs uppercase tracking-widest text-center block transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/10 active:scale-98">Optimize My Profile</a>
+                        </div>
+                    </div>
+
+                    {/* Package 2 */}
+                    <div className="bg-white rounded-3xl p-6 md:p-8 border-2 border-primary/20 flex flex-col justify-between shadow-xl shadow-primary/5 relative group">
+                        <div className="absolute -top-3.5 right-6 px-4 py-1.5 rounded-full bg-primary text-white text-[9px] font-black uppercase tracking-widest">Recommended</div>
+                        <div className="space-y-6">
+                            <div>
+                                <span className="inline-block px-3 py-1.5 rounded-lg bg-primary/10 text-[10px] font-black text-primary uppercase tracking-widest mb-4">Best For: More calls, direction requests & map ranking</span>
+                                <h3 className="text-2xl font-black text-text-heading tracking-tight">Maps Ranking Growth</h3>
+                                <div className="text-3xl font-black text-primary mt-2">₹9,999 - ₹14,999 <span className="text-xs font-bold text-slate-400 lowercase">/ Month</span></div>
+                            </div>
+                            
+                            <div className="border-t border-slate-200/60 pt-6">
+                                <h4 className="text-xs font-black uppercase text-slate-400 tracking-widest mb-4">What's Included:</h4>
+                                <ul className="space-y-3.5">
+                                    {[
+                                        "Everything in GBP Setup & Optimization",
+                                        "Weekly GBP Posts",
+                                        "Monthly Geo-Target Optimization",
+                                        "Competitor Monitoring",
+                                        "Review Response Optimization",
+                                        "Reputation Management",
+                                        "Keyword-Based Review Strategy",
+                                        "Ongoing Image Optimization",
+                                        "Product & Services Updates",
+                                        "Local Engagement Signals",
+                                        "AI-Based GBP Monitoring",
+                                        "Spam Competitor Detection",
+                                        "Monthly Insights Report",
+                                        "Ranking Heatmap Tracking"
+                                    ].map((item, idx) => (
+                                        <li key={idx} className="flex items-start gap-3 text-xs md:text-sm font-semibold text-text-body/80">
+                                            <span className="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div className="space-y-6 mt-8">
+                            <div className="grid grid-cols-2 gap-4 border-t border-slate-100 pt-6 text-[10px] font-bold uppercase text-slate-400">
+                                <div>
+                                    <div>Timeline</div>
+                                    <div className="text-xs font-bold text-text-heading mt-1">Monthly Management</div>
+                                </div>
+                                <div>
+                                    <div>Reporting</div>
+                                    <div className="text-xs font-bold text-text-heading mt-1">Dashboard + Heatmap Reports</div>
+                                </div>
+                            </div>
+                            <div className="p-5 rounded-2xl bg-primary/5 border border-primary/10">
+                                <div className="text-[10px] font-black uppercase text-primary tracking-widest mb-1.5">Expected Outcome:</div>
+                                <p className="text-xs font-semibold text-primary-dark/80 leading-relaxed">Better Google Maps rankings, increased calls & customer actions, higher engagement on profile, and improved local authority.</p>
+                            </div>
+                            <a href="https://wa.me/917229089082?text=Hi%20Jatin,%20I'm%20interested%20in%20the%20Maps%20Ranking%20Growth%20package%20(₹9,999%20-%20₹14,999/month)%20for%20my%20business." target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-primary text-white rounded-2xl font-black text-xs uppercase tracking-widest text-center block transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/10 active:scale-98">Grow My Maps Ranking</a>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Trust & E-E-A-T Section */}
+                <div className="border-t border-slate-200/60 pt-16 space-y-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        {/* Why JR Growth */}
+                        <div className="space-y-6">
+                            <h3 className="text-sm font-black text-primary uppercase tracking-widest flex items-center gap-2 font-label">
+                                <span className="material-symbols-outlined text-lg">verified_user</span> Why JR Growth?
+                            </h3>
+                            <ul className="space-y-4">
+                                {[
+                                    { title: "AI-Powered Optimization Systems", desc: "We use machine learning to analyze search patterns and identify instant ranking gaps." },
+                                    { title: "Developer-Level Technical SEO Expertise", desc: "No generic checklists. We directly optimize site speeds, rendering, schema structures, and code." },
+                                    { title: "Transparent Reporting", desc: "Get real video reports explaining ranking growth and call metrics—no vanity metrics." },
+                                    { title: "Local Business Growth Focused", desc: "We focus on outcomes that matter to business owners: calls, direction requests, and inquiries." },
+                                    { title: "No Fake Promises", desc: "We deliver data-driven optimization and real rankings, never selling overnight miracles." },
+                                    { title: "Data-Driven Strategy", desc: "Every action is backed by competitor intelligence, ranking heatmaps, and search volume insights." },
+                                    { title: "Personalized Growth Plans", desc: "Custom optimization strategies tailored specifically for your city, industry, and business goals." }
+                                ].map((item, idx) => (
+                                    <li key={idx} className="space-y-1">
+                                        <div className="text-sm font-bold text-text-heading flex items-center gap-2">
+                                            <span className="h-1.5 w-1.5 rounded-full bg-primary"></span> {item.title}
+                                        </div>
+                                        <p className="text-xs text-text-body/70 pl-3.5 leading-relaxed">{item.desc}</p>
+                                    </li>
+                                ))}
                             </ul>
-                            <div className="flex flex-col justify-center gap-4">
-                                <div className="p-4 rounded-2xl bg-white/10 border border-white/20 text-center">
-                                    <p className="text-2xl font-black">Maps Mastery</p>
-                                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#c7fbe8]">Local Pack Dominance</p>
+                        </div>
+
+                        {/* Industries We Grow */}
+                        <div className="space-y-6">
+                            <h3 className="text-sm font-black text-primary uppercase tracking-widest flex items-center gap-2 font-label">
+                                <span className="material-symbols-outlined text-lg">storefront</span> Industries We Work With
+                            </h3>
+                            <p className="text-xs font-semibold text-text-body/60 leading-relaxed mb-4">We specialize in building custom local visibility systems across these highly competitive niches:</p>
+                            <div className="flex flex-wrap gap-2.5">
+                                {[
+                                    "Clinics & Doctors",
+                                    "Salons & Spas",
+                                    "Real Estate",
+                                    "Restaurants & Cafes",
+                                    "Gyms & Fitness Centers",
+                                    "Home Service Businesses",
+                                    "Local Retail Stores",
+                                    "Educational Institutes"
+                                ].map((item, idx) => (
+                                    <span key={idx} className="px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-600 transition-colors hover:bg-primary/5 hover:text-primary hover:border-primary/20 cursor-default">
+                                        {item}
+                                    </span>
+                                ))}
+                            </div>
+                            
+                            {/* Service Delivery Specs */}
+                            <div className="border-t border-slate-100 pt-6 mt-6 grid grid-cols-2 gap-4">
+                                <div>
+                                    <div className="text-[10px] font-black uppercase text-slate-400 tracking-wider">Service Mode</div>
+                                    <div className="text-xs font-bold text-text-heading mt-1">Local Growth Partner</div>
+                                </div>
+                                <div>
+                                    <div className="text-[10px] font-black uppercase text-slate-400 tracking-wider">Focus Areas</div>
+                                    <div className="text-xs font-bold text-text-heading mt-1">Tier-2 Cities & SMBs</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-
-                <section>
-                    <div className="flex items-center justify-between mb-10 md:mb-12">
-                        <h3 className="text-[10px] font-black text-primary uppercase tracking-[0.3em]">Action Items</h3>
-                        <span className="h-px flex-1 bg-slate-100 mx-4 md:mx-8"></span>
-                    </div>
-                    <div className="grid sm:grid-cols-2 gap-x-12 gap-y-4 md:gap-y-6">
-                        <div className="flex items-center gap-3 md:gap-4 group/list cursor-default">
-                            <div className="h-7 w-7 md:h-8 md:w-8 rounded-lg md:rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover/list:bg-primary group-hover/list:text-white transition-all"><span className="material-symbols-outlined text-[16px] md:text-[18px]">check_circle</span></div>
-                            <span className="text-xs md:text-sm font-bold text-primary-dark group-hover/list:translate-x-1 transition-transform">Primary Category Optimization</span>
-                        </div>
-                        <div className="flex items-center gap-3 md:gap-4 group/list cursor-default">
-                            <div className="h-7 w-7 md:h-8 md:w-8 rounded-lg md:rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover/list:bg-primary group-hover/list:text-white transition-all"><span className="material-symbols-outlined text-[16px] md:text-[18px]">check_circle</span></div>
-                            <span className="text-xs md:text-sm font-bold text-primary-dark group-hover/list:translate-x-1 transition-transform">Service Area Expansion</span>
-                        </div>
-                        <div className="flex items-center gap-3 md:gap-4 group/list cursor-default">
-                            <div className="h-7 w-7 md:h-8 md:w-8 rounded-lg md:rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover/list:bg-primary group-hover/list:text-white transition-all"><span className="material-symbols-outlined text-[16px] md:text-[18px]">check_circle</span></div>
-                            <span className="text-xs md:text-sm font-bold text-primary-dark group-hover/list:translate-x-1 transition-transform">Q&A & Reputation Management</span>
-                        </div>
-                        <div className="flex items-center gap-3 md:gap-4 group/list cursor-default">
-                            <div className="h-7 w-7 md:h-8 md:w-8 rounded-lg md:rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover/list:bg-primary group-hover/list:text-white transition-all"><span className="material-symbols-outlined text-[16px] md:text-[18px]">check_circle</span></div>
-                            <span className="text-xs md:text-sm font-bold text-primary-dark group-hover/list:translate-x-1 transition-transform">NAP Consistency Signals</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="bg-primary p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] text-white flex flex-col md:flex-row gap-6 md:gap-8 items-center justify-between">
-                    <div className="text-center md:text-left">
-                        <p className="text-[10px] font-black uppercase tracking-widest text-primary-light mb-2">Maps Visibility Assessment</p>
-                        <h4 className="text-xl md:text-2xl font-black tracking-tight leading-tight">Discuss your GBP visibility</h4>
-                    </div>
-                    <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 w-full md:w-auto">
-                        <a href="https://wa.me/917229089082" className="flex items-center justify-center gap-2 rounded-xl md:rounded-2xl bg-white px-6 md:px-8 py-3 md:py-4 text-[10px] md:text-xs font-black text-primary uppercase tracking-widest shadow-xl transition-all hover:scale-105 active:scale-95"><span className="material-symbols-outlined text-lg">chat</span>WhatsApp</a>
-                        <a href="mailto:jatin@jrgrowth.tech" className="flex items-center justify-center gap-2 rounded-xl md:rounded-2xl bg-primary-dark px-6 md:px-8 py-3 md:py-4 text-[10px] md:text-xs font-black text-white uppercase tracking-widest transition-all hover:bg-black active:scale-95"><span className="material-symbols-outlined text-lg">mail</span>Email Strategy</a>
-                    </div>
-                </section>
+                </div>
             </div>
             <div className="h-20 md:h-32"></div>
         </div>
@@ -1284,15 +1520,15 @@ export default function Home() {
     {/* Ads Systems Modal */}
     <div id="ads-modal" className="fixed inset-0 z-[100] hidden">
         <div className="absolute inset-0 bg-primary-dark/40 backdrop-blur-md transition-opacity duration-500" onClick={() => closeModal('ads-modal')}></div>
-        <div className="absolute right-0 top-0 h-full w-full max-w-4xl bg-white shadow-2xl transition-transform duration-500 translate-x-full overflow-y-auto custom-scrollbar" id="ads-modal-content">
-            <div className="sticky top-0 z-20 flex items-center justify-between bg-white/90 p-4 md:p-8 backdrop-blur-md border-b border-slate-50">
+        <div className="absolute right-0 top-0 h-full w-full max-w-5xl bg-white shadow-2xl transition-transform duration-500 translate-x-full overflow-y-auto custom-scrollbar" id="ads-modal-content">
+            <div className="sticky top-0 z-20 flex items-center justify-between bg-white/90 p-4 md:p-8 backdrop-blur-md border-b border-slate-150">
                 <div className="flex items-center gap-3">
                     <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-primary flex items-center justify-center text-white">
                         <span className="material-symbols-outlined text-xl md:text-2xl">ads_click</span>
                     </div>
                     <div>
-                        <h2 className="text-lg md:text-xl font-black text-primary-dark uppercase tracking-tight">Google Ads Engine</h2>
-                        <p className="text-[9px] md:text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">Performance Framework v2.0</p>
+                        <h2 className="text-lg md:text-xl font-black text-primary-dark uppercase tracking-tight">Google Ads Management Services</h2>
+                        <p className="text-[9px] md:text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">Generate High-Intent Leads</p>
                     </div>
                 </div>
                 <button onClick={() => closeModal('ads-modal')} className="group flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 transition-all hover:bg-red-50 hover:text-red-500">
@@ -1300,80 +1536,189 @@ export default function Home() {
                 </button>
             </div>
 
-            <div className="p-6 md:p-12 lg:p-20 space-y-16 md:space-y-24">
-                <section>
-                    <h3 className="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-6">ROI Oriented Acquisition</h3>
-                    <div className="space-y-6">
-                        <p className="text-xl md:text-3xl font-black text-primary-dark leading-tight">Stop paying for clicks. Start acquiring customers.</p>
-                        <p className="text-sm md:text-base text-slate-500 font-medium leading-relaxed">Most businesses struggle because keyword intent is misunderstood and tracking is broken. We build systems that focus on lead quality and ROAS.</p>
-                    </div>
+            <div className="p-6 md:p-12 lg:p-16 space-y-12">
+                <section className="space-y-4">
+                    <h1 className="text-xl md:text-3xl font-black text-primary-dark leading-tight">Google Ads Management Services</h1>
+                    <p className="text-sm md:text-base text-slate-500 font-medium leading-relaxed max-w-3xl">Generate high-quality leads with optimized Google Ads campaigns focused on ROI. We design and launch targeted local lead campaigns that connect you directly with customers searching for your services right now.</p>
                 </section>
 
-                <section className="p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] bg-[#185441] text-white relative overflow-hidden">
-                    <div className="relative z-10">
-                        <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#c7fbe8] mb-8">Performance Framework</h3>
-                        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-                            <ul className="space-y-3 md:space-y-4">
-                                <li className="flex items-center gap-3 text-xs md:text-sm font-bold tracking-tight"><span className="h-1 w-1 rounded-full bg-[#c7fbe8]"></span>AI-Driven Keyword Research</li>
-                                <li className="flex items-center gap-3 text-xs md:text-sm font-bold tracking-tight"><span className="h-1 w-1 rounded-full bg-[#c7fbe8]"></span>Competitor Advertising Intelligence</li>
-                                <li className="flex items-center gap-3 text-xs md:text-sm font-bold tracking-tight"><span className="h-1 w-1 rounded-full bg-[#c7fbe8]"></span>Conversion Tracking Implementation</li>
-                                <li className="flex items-center gap-3 text-xs md:text-sm font-bold tracking-tight"><span className="h-1 w-1 rounded-full bg-[#c7fbe8]"></span>Geographic Targeting Optimization</li>
-                                <li className="flex items-center gap-3 text-xs md:text-sm font-bold tracking-tight"><span className="h-1 w-1 rounded-full bg-[#c7fbe8]"></span>Behavioral Audience Targeting</li>
-                                <li className="flex items-center gap-3 text-xs md:text-sm font-bold tracking-tight"><span className="h-1 w-1 rounded-full bg-[#c7fbe8]"></span>Scalable Campaign Architecture</li>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {/* Package 1 */}
+                    <div className="bg-slate-50/50 rounded-3xl p-6 md:p-8 border border-slate-200/60 flex flex-col justify-between hover:border-primary/20 hover:shadow-xl hover:shadow-slate-100 transition-all duration-300 relative group">
+                        <div className="space-y-6">
+                            <div>
+                                <span className="inline-block px-3 py-1.5 rounded-lg bg-slate-200/60 text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4">Best For: Starting Google Ads for lead generation</span>
+                                <h3 className="text-2xl font-black text-text-heading tracking-tight">Ads Launch Setup</h3>
+                                <div className="text-3xl font-black text-primary mt-2">₹8,999 <span className="text-xs font-bold text-slate-400 lowercase">Setup + Management</span></div>
+                                <div className="text-[10px] font-black text-slate-400 uppercase tracking-wider mt-2">Recommended Ad Budget: <span className="text-primary font-bold">₹15k – ₹50k/month</span></div>
+                            </div>
+                            
+                            <div className="border-t border-slate-200/60 pt-6">
+                                <h4 className="text-xs font-black uppercase text-slate-400 tracking-widest mb-4">What's Included:</h4>
+                                <ul className="space-y-3.5">
+                                    {[
+                                        "Google Ads Account Setup",
+                                        "Keyword Research",
+                                        "Search Campaign Creation",
+                                        "Ad Copywriting",
+                                        "Conversion Tracking Setup",
+                                        "Call Tracking",
+                                        "Negative Keywords Setup",
+                                        "Landing Page Recommendations",
+                                        "Audience Targeting Setup",
+                                        "Monthly Basic Reporting"
+                                    ].map((item, idx) => (
+                                        <li key={idx} className="flex items-start gap-3 text-xs md:text-sm font-semibold text-text-body/80">
+                                            <span className="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div className="space-y-6 mt-8">
+                            <div className="grid grid-cols-2 gap-4 border-t border-slate-100 pt-6 text-[10px] font-bold uppercase text-slate-400">
+                                <div>
+                                    <div>Timeline</div>
+                                    <div className="text-xs font-bold text-text-heading mt-1">7 Days Launch</div>
+                                </div>
+                                <div>
+                                    <div>Reporting</div>
+                                    <div className="text-xs font-bold text-text-heading mt-1">Monthly Basic Report</div>
+                                </div>
+                            </div>
+                            <div className="p-5 rounded-2xl bg-primary/5 border border-primary/10">
+                                <div className="text-[10px] font-black uppercase text-primary tracking-widest mb-1.5">Expected Outcome:</div>
+                                <p className="text-xs font-semibold text-primary-dark/80 leading-relaxed">Properly structured campaigns, lower cost-per-click, and clean lead flow.</p>
+                            </div>
+                            <a href="https://wa.me/917229089082?text=Hi%20Jatin,%20I'm%20interested%20in%20the%20Ads%20Launch%20Setup%20package%20(₹8,999%20setup%20%2B%20management)%20for%20my%20business." target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-primary text-white rounded-2xl font-black text-xs uppercase tracking-widest text-center block transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/10 active:scale-98">Launch My Ads</a>
+                        </div>
+                    </div>
+
+                    {/* Package 2 */}
+                    <div className="bg-white rounded-3xl p-6 md:p-8 border-2 border-primary/20 flex flex-col justify-between shadow-xl shadow-primary/5 relative group">
+                        <div className="absolute -top-3.5 right-6 px-4 py-1.5 rounded-full bg-primary text-white text-[9px] font-black uppercase tracking-widest">Recommended</div>
+                        <div className="space-y-6">
+                            <div>
+                                <span className="inline-block px-3 py-1.5 rounded-lg bg-primary/10 text-[10px] font-black text-primary uppercase tracking-widest mb-4">Best For: Scalable leads & lower cost-per-lead</span>
+                                <h3 className="text-2xl font-black text-text-heading tracking-tight">Performance Growth Ads</h3>
+                                <div className="text-3xl font-black text-primary mt-2">₹15,000 - ₹25,000 <span className="text-xs font-bold text-slate-400 lowercase">/ Month</span></div>
+                                <div className="text-[10px] font-black text-slate-400 uppercase tracking-wider mt-2">Pricing Alternative: <span className="text-primary font-bold">10% - 15% of ad spend</span></div>
+                            </div>
+                            
+                            <div className="border-t border-slate-200/60 pt-6">
+                                <h4 className="text-xs font-black uppercase text-slate-400 tracking-widest mb-4">What's Included:</h4>
+                                <ul className="space-y-3.5">
+                                    {[
+                                        "Everything in Setup Package",
+                                        "Advanced Conversion Tracking",
+                                        "A/B Ad Testing",
+                                        "Landing Page Optimization Suggestions",
+                                        "Performance Max Campaigns",
+                                        "Remarketing Campaigns",
+                                        "Audience Expansion",
+                                        "Weekly Optimization",
+                                        "Competitor Ad Analysis",
+                                        "Call & Lead Quality Tracking",
+                                        "AI-Assisted Bid Optimization",
+                                        "Monthly ROI Reporting",
+                                        "Strategy Consultation Calls"
+                                    ].map((item, idx) => (
+                                        <li key={idx} className="flex items-start gap-3 text-xs md:text-sm font-semibold text-text-body/80">
+                                            <span className="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div className="space-y-6 mt-8">
+                            <div className="grid grid-cols-2 gap-4 border-t border-slate-100 pt-6 text-[10px] font-bold uppercase text-slate-400">
+                                <div>
+                                    <div>Timeline</div>
+                                    <div className="text-xs font-bold text-text-heading mt-1">Monthly Management</div>
+                                </div>
+                                <div>
+                                    <div>Reporting</div>
+                                    <div className="text-xs font-bold text-text-heading mt-1">ROI Dashboard + Strategy Call</div>
+                                </div>
+                            </div>
+                            <div className="p-5 rounded-2xl bg-primary/5 border border-primary/10">
+                                <div className="text-[10px] font-black uppercase text-primary tracking-widest mb-1.5">Expected Outcome:</div>
+                                <p className="text-xs font-semibold text-primary-dark/80 leading-relaxed">Lower cost per lead, better quality inquiries, scalable lead generation, and improved return on ad spend.</p>
+                            </div>
+                            <a href="https://wa.me/917229089082?text=Hi%20Jatin,%20I'm%20interested%20in%20the%20Performance%20Growth%20Ads%20package%20(₹15,000%20-%20₹25,000/month)%20for%20my%20business." target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-primary text-white rounded-2xl font-black text-xs uppercase tracking-widest text-center block transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/10 active:scale-98">Scale My Leads</a>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Trust & E-E-A-T Section */}
+                <div className="border-t border-slate-200/60 pt-16 space-y-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        {/* Why JR Growth */}
+                        <div className="space-y-6">
+                            <h3 className="text-sm font-black text-primary uppercase tracking-widest flex items-center gap-2 font-label">
+                                <span className="material-symbols-outlined text-lg">verified_user</span> Why JR Growth?
+                            </h3>
+                            <ul className="space-y-4">
+                                {[
+                                    { title: "AI-Powered Optimization Systems", desc: "We use machine learning to analyze search patterns and identify instant ranking gaps." },
+                                    { title: "Developer-Level Technical SEO Expertise", desc: "No generic checklists. We directly optimize site speeds, rendering, schema structures, and code." },
+                                    { title: "Transparent Reporting", desc: "Get real video reports explaining ranking growth and call metrics—no vanity metrics." },
+                                    { title: "Local Business Growth Focused", desc: "We focus on outcomes that matter to business owners: calls, direction requests, and inquiries." },
+                                    { title: "No Fake Promises", desc: "We deliver data-driven optimization and real rankings, never selling overnight miracles." },
+                                    { title: "Data-Driven Strategy", desc: "Every action is backed by competitor intelligence, ranking heatmaps, and search volume insights." },
+                                    { title: "Personalized Growth Plans", desc: "Custom optimization strategies tailored specifically for your city, industry, and business goals." }
+                                ].map((item, idx) => (
+                                    <li key={idx} className="space-y-1">
+                                        <div className="text-sm font-bold text-text-heading flex items-center gap-2">
+                                            <span className="h-1.5 w-1.5 rounded-full bg-primary"></span> {item.title}
+                                        </div>
+                                        <p className="text-xs text-text-body/70 pl-3.5 leading-relaxed">{item.desc}</p>
+                                    </li>
+                                ))}
                             </ul>
-                            <div className="flex flex-col justify-center gap-4">
-                                <div className="p-4 rounded-2xl bg-white/10 border border-white/20 text-center">
-                                    <p className="text-2xl font-black">Profitable ROI</p>
-                                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#c7fbe8]">Guiding Bidding Strategy</p>
+                        </div>
+
+                        {/* Industries We Grow */}
+                        <div className="space-y-6">
+                            <h3 className="text-sm font-black text-primary uppercase tracking-widest flex items-center gap-2 font-label">
+                                <span className="material-symbols-outlined text-lg">storefront</span> Industries We Work With
+                            </h3>
+                            <p className="text-xs font-semibold text-text-body/60 leading-relaxed mb-4">We specialize in building custom local visibility systems across these highly competitive niches:</p>
+                            <div className="flex flex-wrap gap-2.5">
+                                {[
+                                    "Clinics & Doctors",
+                                    "Salons & Spas",
+                                    "Real Estate",
+                                    "Restaurants & Cafes",
+                                    "Gyms & Fitness Centers",
+                                    "Home Service Businesses",
+                                    "Local Retail Stores",
+                                    "Educational Institutes"
+                                ].map((item, idx) => (
+                                    <span key={idx} className="px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-600 transition-colors hover:bg-primary/5 hover:text-primary hover:border-primary/20 cursor-default">
+                                        {item}
+                                    </span>
+                                ))}
+                            </div>
+                            
+                            {/* Service Delivery Specs */}
+                            <div className="border-t border-slate-100 pt-6 mt-6 grid grid-cols-2 gap-4">
+                                <div>
+                                    <div className="text-[10px] font-black uppercase text-slate-400 tracking-wider">Service Mode</div>
+                                    <div className="text-xs font-bold text-text-heading mt-1">Local Growth Partner</div>
+                                </div>
+                                <div>
+                                    <div className="text-[10px] font-black uppercase text-slate-400 tracking-wider">Focus Areas</div>
+                                    <div className="text-xs font-bold text-text-heading mt-1">Tier-2 Cities & SMBs</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-
-                <section>
-                    <div className="flex items-center justify-between mb-10 md:mb-12">
-                        <h3 className="text-[10px] font-black text-primary uppercase tracking-[0.3em]">What's Included</h3>
-                        <span className="h-px flex-1 bg-slate-100 mx-4 md:mx-8"></span>
-                    </div>
-                    <div className="grid sm:grid-cols-2 gap-x-12 gap-y-4 md:gap-y-6">
-                        <div className="flex items-center gap-3 md:gap-4 group/list cursor-default">
-                            <div className="h-7 w-7 md:h-8 md:w-8 rounded-lg md:rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover/list:bg-primary group-hover/list:text-white transition-all"><span className="material-symbols-outlined text-[16px] md:text-[18px]">check_circle</span></div>
-                            <span className="text-xs md:text-sm font-bold text-primary-dark group-hover/list:translate-x-1 transition-transform">Search Campaign Setup & Opt</span>
-                        </div>
-                        <div className="flex items-center gap-3 md:gap-4 group/list cursor-default">
-                            <div className="h-7 w-7 md:h-8 md:w-8 rounded-lg md:rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover/list:bg-primary group-hover/list:text-white transition-all"><span className="material-symbols-outlined text-[16px] md:text-[18px]">check_circle</span></div>
-                            <span className="text-xs md:text-sm font-bold text-primary-dark group-hover/list:translate-x-1 transition-transform">High-Converting Ad Copy</span>
-                        </div>
-                        <div className="flex items-center gap-3 md:gap-4 group/list cursor-default">
-                            <div className="h-7 w-7 md:h-8 md:w-8 rounded-lg md:rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover/list:bg-primary group-hover/list:text-white transition-all"><span className="material-symbols-outlined text-[16px] md:text-[18px]">check_circle</span></div>
-                            <span className="text-xs md:text-sm font-bold text-primary-dark group-hover/list:translate-x-1 transition-transform">Technical Conversion Tracking</span>
-                        </div>
-                        <div className="flex items-center gap-3 md:gap-4 group/list cursor-default">
-                            <div className="h-7 w-7 md:h-8 md:w-8 rounded-lg md:rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover/list:bg-primary group-hover/list:text-white transition-all"><span className="material-symbols-outlined text-[16px] md:text-[18px]">check_circle</span></div>
-                            <span className="text-xs md:text-sm font-bold text-primary-dark group-hover/list:translate-x-1 transition-transform">Call Tracking Integration</span>
-                        </div>
-                        <div className="flex items-center gap-3 md:gap-4 group/list cursor-default">
-                            <div className="h-7 w-7 md:h-8 md:w-8 rounded-lg md:rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover/list:bg-primary group-hover/list:text-white transition-all"><span className="material-symbols-outlined text-[16px] md:text-[18px]">check_circle</span></div>
-                            <span className="text-xs md:text-sm font-bold text-primary-dark group-hover/list:translate-x-1 transition-transform">Negative Keyword Optimization</span>
-                        </div>
-                        <div className="flex items-center gap-3 md:gap-4 group/list cursor-default">
-                            <div className="h-7 w-7 md:h-8 md:w-8 rounded-lg md:rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover/list:bg-primary group-hover/list:text-white transition-all"><span className="material-symbols-outlined text-[16px] md:text-[18px]">check_circle</span></div>
-                            <span className="text-xs md:text-sm font-bold text-primary-dark group-hover/list:translate-x-1 transition-transform">Performance ROI Analytics</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="bg-primary p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] text-white flex flex-col md:flex-row gap-6 md:gap-8 items-center justify-between">
-                    <div className="text-center md:text-left">
-                        <p className="text-[10px] font-black uppercase tracking-widest text-primary-light mb-2">Paid Acquisition Audit</p>
-                        <h4 className="text-xl md:text-2xl font-black tracking-tight leading-tight">Discuss your Google Ads goals</h4>
-                    </div>
-                    <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 w-full md:w-auto">
-                        <a href="https://wa.me/917229089082" className="flex items-center justify-center gap-2 rounded-xl md:rounded-2xl bg-white px-6 md:px-8 py-3 md:py-4 text-[10px] md:text-xs font-black text-primary uppercase tracking-widest shadow-xl transition-all hover:scale-105 active:scale-95"><span className="material-symbols-outlined text-lg">chat</span>WhatsApp</a>
-                        <a href="mailto:jatin@jrgrowth.tech" className="flex items-center justify-center gap-2 rounded-xl md:rounded-2xl bg-primary-dark px-6 md:px-8 py-3 md:py-4 text-[10px] md:text-xs font-black text-white uppercase tracking-widest transition-all hover:bg-black active:scale-95"><span className="material-symbols-outlined text-lg">mail</span>Email Strategy</a>
-                    </div>
-                </section>
+                </div>
             </div>
             <div className="h-20 md:h-32"></div>
         </div>

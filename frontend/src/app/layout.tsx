@@ -4,15 +4,15 @@ import ScrollReveal from "@/components/ScrollReveal";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI Powered Local SEO & Google Business Profile Expert | JR Growth",
-  description: "JR Growth helps local businesses grow with AI Powered Local SEO, Google Business Profile Optimization, and Performance Google Ads services designed to improve Google Maps visibility, leads, and customer acquisition.",
-  keywords: ["AI Powered Local SEO", "Google Business Profile Optimization", "Google Maps Ranking Expert", "Local SEO Agency", "Google Ads Services", "Local Business Marketing", "GBP Expert India", "AI SEO Services"],
+  title: "AI-Powered Local SEO & Google Business Growth Partner for Indian Local Businesses | JR Growth",
+  description: "JR Growth is your AI-Powered Local SEO & Google Business Growth Partner. We help Indian businesses rank higher in local search, appear in Google Maps, and generate more phone calls and leads.",
+  keywords: ["AI-Powered Local SEO", "Google Business Profile Optimization", "Google Maps Ranking Expert", "Local Growth Partner", "Google Ads Management", "Local Business Marketing India", "GBP Expert Gujarat", "AI SEO Services India"],
   alternates: {
     canonical: "https://jrgrowth.tech/",
   },
   openGraph: {
-    title: "AI Powered Local SEO & Google Maps Growth Systems | JR Growth",
-    description: "JR Growth builds AI-powered Local SEO, Google Maps optimization, and Google Ads growth systems for businesses looking to improve local visibility and generate qualified leads worldwide.",
+    title: "AI-Powered Local SEO & Google Maps Growth Partner | JR Growth",
+    description: "JR Growth helps Indian local businesses scale Map Pack rankings, optimize Google Business Profiles, and manage performance Google Ads to drive real customer growth.",
     url: "https://jrgrowth.tech/",
     siteName: "JR Growth",
     images: [
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
         height: 630,
       },
     ],
-    locale: "en_GB",
+    locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "JR Growth | AI Powered Local SEO & Google Maps Expert",
-    description: "Grow your business with AI-driven Local SEO, GBP Optimization, and Performance Google Ads systems engineered for measurable visibility and lead generation.",
+    title: "JR Growth | AI-Powered Local SEO & Google Maps Growth Partner",
+    description: "Grow your local business with AI-driven Local SEO, Google Business Profile optimization, and Performance Google Ads systems engineered for actual phone calls and leads.",
     images: ["https://jrgrowth.tech/og/home-og.jpg"],
   },
 };
@@ -58,7 +58,7 @@ export default function RootLayout({
       "https://www.instagram.com/jatinraiyani.gbp",
       "https://www.linkedin.com/in/jatin-raiyani/"
     ],
-    "description": "JR Growth helps local businesses grow with AI Powered Local SEO, Google Business Profile Optimization, and Performance Google Ads services."
+    "description": "JR Growth is an AI-Powered Local SEO & Google Business Growth Partner for Indian local businesses, specializing in Google Business Profile optimization and Performance Google Ads."
   };
 
   return (
