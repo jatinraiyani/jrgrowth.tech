@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "AI Powered Local SEO & Google Business Profile Expert | JR Growth",
   description: "JR Growth helps local businesses grow with AI Powered Local SEO, Google Business Profile Optimization, and Performance Google Ads services designed to improve Google Maps visibility, leads, and customer acquisition.",
   keywords: ["AI Powered Local SEO", "Google Business Profile Optimization", "Google Maps Ranking Expert", "Local SEO Agency", "Google Ads Services", "Local Business Marketing", "GBP Expert India", "AI SEO Services"],
+  alternates: {
+    canonical: "https://jrgrowth.tech/",
+  },
   openGraph: {
     title: "AI Powered Local SEO & Google Maps Growth Systems | JR Growth",
     description: "JR Growth builds AI-powered Local SEO, Google Maps optimization, and Google Ads growth systems for businesses looking to improve local visibility and generate qualified leads worldwide.",
@@ -35,6 +38,29 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "JR Growth",
+    "image": "https://jrgrowth.tech/assets/logo.png",
+    "@id": "https://jrgrowth.tech/#organization",
+    "url": "https://jrgrowth.tech/",
+    "telephone": "+917229089082",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Valsad",
+      "addressRegion": "Gujarat",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://www.facebook.com/JatinGMBExpert",
+      "https://www.instagram.com/jatinraiyani.gbp",
+      "https://www.linkedin.com/in/jatin-raiyani/"
+    ],
+    "description": "JR Growth helps local businesses grow with AI Powered Local SEO, Google Business Profile Optimization, and Performance Google Ads services."
+  };
+
   return (
     <html lang="en" className="scroll-smooth">
       <head>
@@ -43,6 +69,12 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&family=Manrope:wght@400;500;600&family=Geist:wght@400;600&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
         
+        {/* Schema.org Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"

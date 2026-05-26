@@ -1400,7 +1400,7 @@ export default function Home() {
                         <span className="px-4 py-1.5 rounded-full bg-slate-200 text-[10px] md:text-xs font-black text-slate-600 uppercase tracking-[0.2em] font-label">Construction</span>
                         <span className="px-4 py-1.5 rounded-full bg-slate-200 text-[10px] md:text-xs font-black text-slate-600 uppercase tracking-[0.2em] font-label">India Market</span>
                     </div>
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-text-heading poly-sans-feel leading-[1.1] mb-8">Shreeji Precast</h1>
+                    <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-text-heading poly-sans-feel leading-[1.1] mb-8">Shreeji Precast</h2>
                     <p className="text-lg md:text-2xl text-text-body/70 max-w-4xl leading-relaxed">
                         Engineered a hyper-local visibility system for this Gujarat-based readymade cement folding wall manufacturer, improving Google Maps discoverability and strengthening regional search authority.
                     </p>
@@ -1558,7 +1558,7 @@ export default function Home() {
                         <span className="px-4 py-1.5 rounded-full bg-slate-200 text-[10px] md:text-xs font-black text-slate-600 uppercase tracking-[0.2em] font-label">FMCG</span>
                         <span className="px-4 py-1.5 rounded-full bg-slate-200 text-[10px] md:text-xs font-black text-slate-600 uppercase tracking-[0.2em] font-label">UK Market</span>
                     </div>
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-text-heading poly-sans-feel leading-[1.1] mb-8">Mega Retail Ltd.</h1>
+                    <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-text-heading poly-sans-feel leading-[1.1] mb-8">Mega Retail Ltd.</h2>
                     <p className="text-lg md:text-2xl text-text-body/70 max-w-4xl leading-relaxed">
                         Developed a scalable local acquisition system for this UK-based FMCG wholesaler, combining AI-powered Local SEO and performance-driven Google Ads to improve B2B visibility.
                     </p>
@@ -1711,7 +1711,7 @@ export default function Home() {
                         <span className="px-4 py-1.5 rounded-full bg-slate-200 text-[10px] md:text-xs font-black text-slate-600 uppercase tracking-[0.2em] font-label">Beauty Clinic</span>
                         <span className="px-4 py-1.5 rounded-full bg-slate-200 text-[10px] md:text-xs font-black text-slate-600 uppercase tracking-[0.2em] font-label">UK Market</span>
                     </div>
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-text-heading poly-sans-feel leading-[1.1] mb-8">Anita Skin</h1>
+                    <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-text-heading poly-sans-feel leading-[1.1] mb-8">Anita Skin</h2>
                     <p className="text-lg md:text-2xl text-text-body/70 max-w-4xl leading-relaxed">
                         Built a conversion-focused customer acquisition system for this UK-based beauty clinic using strategic Google Ads campaigns and Google Business Profile optimization.
                     </p>
