@@ -206,11 +206,11 @@ export default function Home() {
                     </div>
                     <h1
                         className="mb-8 text-5xl font-extrabold leading-[1.1] tracking-tight text-text-heading poly-sans-feel lg:text-7xl">
-                        AI Powered Local SEO &amp; Google Maps Growth Systems
+                        AI-Powered Local SEO &amp; Google Business Growth Partner
                     </h1>
                     <div className="mb-10 text-lg leading-relaxed text-text-body/80 lg:text-xl space-y-4">
                         <p>
-                            JR Growth is an AI-Powered Local SEO & Google Business Growth Partner for Indian Local Businesses. We help local businesses rank higher in local searches, appear in Google Maps, and generate more calls from nearby customers through developer-level optimization, AI-driven tracking, and ROI-focused Google Ads.
+                            JR Growth is your AI-Powered Local SEO &amp; Google Business Growth Partner. We help Indian &amp; global local businesses rank on Google Maps, build authority, and generate calls from nearby customers through developer-level optimization, AI-driven tracking, and ROI-focused Google Ads.
                         </p>
                         <p>
                             We specialize in building scalable local growth systems for: healthcare businesses, home service companies, restaurants, clinics, legal firms, construction businesses, real estate companies, beauty clinics, and multi-location local brands.
@@ -315,7 +315,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6">
             <div className="mb-20 text-center">
                 <h2 className="mb-6 text-4xl font-extrabold text-text-heading poly-sans-feel lg:text-6xl max-w-4xl mx-auto">
-                    Built Like A Technical Growth System. Not A Traditional Marketing Agency.
+                    Why Choose JR Growth? (Developer-Level Technical SEO)
                 </h2>
                 <div className="h-1.5 w-24 bg-primary rounded-full mx-auto"></div>
             </div>
@@ -384,7 +384,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6">
             <div className="mb-20 text-center">
                 <h2 className="mb-6 text-4xl font-extrabold text-text-heading poly-sans-feel lg:text-6xl">
-                    Engineered Growth Systems &amp; Performance Case Studies
+                    Services Engineered for Local Business Growth
                 </h2>
                 <div className="h-1.5 w-24 bg-primary rounded-full mx-auto"></div>
                 <p className="mt-8 text-xl text-text-body max-w-3xl mx-auto">We build technical performance systems that
@@ -801,8 +801,7 @@ export default function Home() {
     <section className="py-32 bg-surface" id="work">
         <div className="mx-auto max-w-7xl px-6">
             <div className="mb-20 text-center reveal reveal-up">
-                <h2 className="text-4xl font-extrabold text-text-heading poly-sans-feel lg:text-6xl">Impact Across
-                    Industries</h2>
+                <h2 className="text-4xl font-extrabold text-text-heading poly-sans-feel lg:text-6xl">Impact Across Industries (Our Systems in Action)</h2>
                 <p className="mt-6 text-lg text-text-body/70">Engineered growth systems delivered for market leaders and
                     innovators.</p>
                 <div className="mt-8 h-1.5 w-24 bg-primary mx-auto rounded-full"></div>
@@ -896,7 +895,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6">
             <div className="mb-20 text-center reveal reveal-up">
                 <span className="inline-block px-3 py-1.5 rounded-lg bg-primary/10 text-[10px] font-black text-primary uppercase tracking-widest mb-4">Client Feedback</span>
-                <h2 className="text-4xl font-extrabold text-text-heading poly-sans-feel lg:text-5xl">What Our Partners Say</h2>
+                <h2 className="text-4xl font-extrabold text-text-heading poly-sans-feel lg:text-5xl">What Our Partners Say (Client Reviews)</h2>
                 <p className="mt-6 text-lg text-text-body/70 max-w-2xl mx-auto">Real results from local business owners who partnered with us for local search dominance.</p>
                 <div className="mt-8 h-1.5 w-24 bg-primary mx-auto rounded-full"></div>
             </div>
@@ -1065,8 +1064,7 @@ export default function Home() {
                     <h2 className="mb-8 text-4xl font-extrabold text-text-heading poly-sans-feel lg:text-6xl">The Growth
                         Architect</h2>
                     <p className="text-lg leading-relaxed text-text-body/80 mb-8">
-                        I am <span className="font-bold text-text-heading">Jatin Raiyani</span>, a Computer Software
-                        Engineer from Surat with a precision-driven approach to the digital landscape.
+                        I am <span className="font-bold text-text-heading">Jatin Raiyani</span>, a <strong>Computer Software Engineer</strong> and the founder of <strong>JR Growth</strong>, a technical local growth partner specializing in <strong>Google Business Profile Optimization</strong>, <strong>Local Search Engine Optimization</strong>, and <strong>Google Ads Management</strong>. Backed by a strong engineering foundation, I replace generic checklists with developer-level code optimizations, AI-driven competitor analysis, and entity-based authority building to help local businesses and multi-location brands scale organically across India, the US, the UK, the UAE, and global markets.
                     </p>
                     <div className="space-y-6">
                         <div
