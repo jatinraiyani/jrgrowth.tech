@@ -82,88 +82,8 @@ export default function Home() {
     }
   };
 
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How long does Local SEO take to show results?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Local SEO is a long-term growth strategy. Most businesses start seeing improvements in Google rankings and map visibility within 30–90 days, depending on competition, business location, and current website/GBP condition. For highly competitive industries like clinics, real estate, or salons, consistent monthly optimization is recommended for better long-term results."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the difference between Local SEO and Google Business Profile Optimization?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Local SEO focuses on improving your overall online visibility through website optimization, local keywords, technical SEO, citations, and local landing pages. Google Business Profile (GBP) Optimization focuses specifically on improving your Google Maps ranking, business profile visibility, calls & direction requests, and reviews & customer engagement. Both work best together."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you help my business rank higher on Google Maps?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Our Google Business Profile optimization strategies are designed to improve your visibility in Google Maps and local search results by optimizing business categories, services, local relevance, reviews, geo-targeting signals, and engagement activity."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you guarantee #1 rankings on Google?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No ethical SEO expert can guarantee #1 rankings because Google’s algorithm constantly changes. We guarantee transparent work, proven optimization strategies, regular reporting, and consistent improvements focused on generating real business results."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is Google Ads better than SEO for getting leads?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Google Ads gives faster results by appearing instantly in search results, while Local SEO builds long-term organic visibility and trust. The best strategy is using Google Ads for immediate leads and Local SEO/GBP optimization for long-term growth."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need a website for Local SEO or Google Business Profile optimization?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A website is highly recommended for better rankings and credibility. Google Business Profile optimization can help businesses without a website, but businesses with optimized websites generally rank stronger and convert better."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will I receive reports and updates on work progress?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Transparency is a core part of JR Growth. Depending on your package, you’ll receive ranking reports, Google Business insights, lead & traffic tracking, monthly performance updates, and strategy recommendations."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Which businesses benefit the most from your services?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Our services are ideal for local businesses that want more visibility, calls, and customers from Google. Commonly benefiting industries include clinics, salons, spas, restaurants, cafes, real estate, gyms, home services, retail, and education."
-        }
-      }
-    ]
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      
-
-    
-    
-
     {/* Header */}
     <header className="sticky top-0 z-50 w-full border-b border-outline-variant/30 bg-white/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
