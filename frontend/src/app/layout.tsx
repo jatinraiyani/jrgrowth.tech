@@ -128,10 +128,17 @@ export default function RootLayout({
         ],
         "worksFor": {
           "@id": "https://jrgrowth.tech/#organization"
+        },
+        "founderOf": {
+          "@id": "https://jrgrowth.tech/#organization"
         }
       },
       {
-        "@type": "ProfessionalService",
+        "@type": [
+          "Organization",
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
         "@id": "https://jrgrowth.tech/#organization",
         "name": "JR Growth",
         "url": "https://jrgrowth.tech/",
@@ -207,7 +214,7 @@ export default function RootLayout({
               "itemOffered": {
                 "@type": "Service",
                 "@id": "https://jrgrowth.tech/#service-localseo",
-                "name": "AI-Powered Local SEO Systems",
+                "name": "Local SEO",
                 "description": "Developer-level code adjustments, schema.org markup, local keyword landing pages, citation auditing, and search indexing checks.",
                 "provider": {
                   "@id": "https://jrgrowth.tech/#organization"
@@ -220,7 +227,7 @@ export default function RootLayout({
               "itemOffered": {
                 "@type": "Service",
                 "@id": "https://jrgrowth.tech/#service-googleads",
-                "name": "Performance Google Ads Campaigns",
+                "name": "Google Ads",
                 "description": "ROI-focused local search ads, conversion funnel setup, negative keywords optimization, call tracking, and localized search query scaling.",
                 "provider": {
                   "@id": "https://jrgrowth.tech/#organization"
@@ -233,7 +240,7 @@ export default function RootLayout({
               "itemOffered": {
                 "@type": "Service",
                 "@id": "https://jrgrowth.tech/#service-metaads",
-                "name": "Local Meta Ads Systems",
+                "name": "Meta Ads",
                 "description": "Localized Facebook and Instagram ads targeted to local postal areas with custom visual ad creative targeting high-intent local prospects.",
                 "provider": {
                   "@id": "https://jrgrowth.tech/#organization"
