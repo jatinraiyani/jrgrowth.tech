@@ -2,6 +2,7 @@
 'use client';
 import { useEffect } from 'react';
 import HomeInsights from '@/components/HomeInsights';
+import GoogleMap from '@/components/GoogleMap';
 
 export default function Home() {
   useEffect(() => {
@@ -99,7 +100,8 @@ export default function Home() {
                 <a className="text-sm font-semibold text-text-body hover:text-primary transition-colors" href="#work">Work</a>
                 <a className="text-sm font-semibold text-text-body hover:text-primary transition-colors" href="/insights">Insights</a>
                 <a className="text-sm font-semibold text-text-body hover:text-primary transition-colors" href="#about">About</a>
-            </nav>
+                <a className="text-sm font-semibold text-text-body hover:text-primary transition-colors" href="#faq">FAQ</a>
+                <a className="text-sm font-semibold text-text-body hover:text-primary transition-colors" href="#contact">Contact</a></nav>
             <div className="flex items-center gap-3">
                 <a className="hidden sm:flex h-10 items-center justify-center rounded-xl border border-outline-variant bg-white px-5 text-sm font-bold text-text-heading transition-all hover:bg-surface-container"
                     href="mailto:jatin@jrgrowth.tech">
@@ -1022,6 +1024,7 @@ export default function Home() {
             </div>
         </div>
     </section>
+
     {/* FAQ Section */}
     <section className="py-32 bg-surface" id="faq">
         <div className="mx-auto max-w-4xl px-6">
@@ -1199,6 +1202,55 @@ export default function Home() {
                             <li>Educational Institutes</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {/* Contact & Map Section */}
+    <section className="py-32 bg-white border-t border-outline-variant/30" id="contact">
+        <div className="mx-auto max-w-7xl px-6">
+            <div className="grid gap-16 lg:grid-cols-12 items-center">
+                {/* Left: Contact Info */}
+                <div className="lg:col-span-5 reveal reveal-left">
+                    <span className="inline-block px-3 py-1.5 rounded-lg bg-primary/10 text-[10px] font-black text-primary uppercase tracking-widest mb-4">Get In Touch</span>
+                    <h2 className="text-4xl font-extrabold text-text-heading poly-sans-feel lg:text-5xl mb-6">Visit Our Growth Lab</h2>
+                    <p className="text-lg text-text-body/70 mb-10 leading-relaxed">
+                        We engineer local visibility and search dominance. Contact us directly or use the interactive map to get directions to our headquarters.
+                    </p>
+                    <div className="space-y-8">
+                        <div className="flex gap-4 items-start">
+                            <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                                <span className="material-symbols-outlined text-2xl">location_on</span>
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-text-heading text-base">Office Headquarters</h4>
+                                <p className="text-sm text-text-body/60 mt-1">Valsad, Gujarat, India</p>
+                            </div>
+                        </div>
+                        <div className="flex gap-4 items-start">
+                            <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                                <span className="material-symbols-outlined text-2xl">mail</span>
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-text-heading text-base">Email Inquiries</h4>
+                                <p className="text-sm text-text-body/60 mt-1"><a href="mailto:jatin@jrgrowth.tech" className="hover:text-primary transition-colors">jatin@jrgrowth.tech</a></p>
+                            </div>
+                        </div>
+                        <div className="flex gap-4 items-start">
+                            <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                                <span className="material-symbols-outlined text-2xl">chat</span>
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-text-heading text-base">WhatsApp Support</h4>
+                                <p className="text-sm text-text-body/60 mt-1"><a href="https://wa.me/917229089082" target="_blank" className="hover:text-primary transition-colors">+91 72290 89082</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Right: Map Component */}
+                <div className="lg:col-span-7 reveal reveal-right">
+                    <GoogleMap />
                 </div>
             </div>
         </div>
