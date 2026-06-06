@@ -102,7 +102,9 @@ export default function InsightsClient({ initialBlogs }: { initialBlogs: any[] }
                                     </div>
                                     <div className="p-8">
                                         <div className="flex items-center gap-3 mb-4">
-                                            <span className="text-[10px] font-black uppercase tracking-widest text-primary">{blog.category || 'Insights'}</span>
+                                            <span className="text-[10px] font-black uppercase tracking-widest text-primary">
+                                                {blog.category ? blog.category.split(',').map((c: string) => c.trim()).filter(Boolean).join(', ') : 'Insights'}
+                                            </span>
                                             <span className="h-1 w-1 rounded-full bg-slate-300"></span>
                                             <span className="text-[10px] font-bold text-slate-400">
                                               {new Date(blog.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}

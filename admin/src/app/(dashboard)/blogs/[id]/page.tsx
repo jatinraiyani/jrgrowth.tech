@@ -9,6 +9,17 @@ import { uploadImage } from '@/lib/uploadImage';
 import { Save, ArrowLeft, Image as ImageIcon, Settings, Globe, ChevronDown, CheckCircle2, Loader2 } from 'lucide-react';
 import BlogEditor from '@/components/BlogEditor';
 
+const CATEGORIES = [
+  'Local SEO',
+  'Technical SEO',
+  'Off Page SEO',
+  'On Page SEO',
+  'Performance Ads',
+  'GBP',
+  'Landing Page',
+  'AI SEO'
+];
+
 export default function BlogEditorPage({ params }: { params: Promise<{ id: string }> }) {
   const unwrappedParams = React.use(params);
   const id = unwrappedParams.id;
@@ -18,14 +29,15 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
   // Basic Data
   const [title, setTitle] = useState('');
   const [slug, setSlug] = useState('');
-  const [category, setCategory] = useState('');
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [content, setContent] = useState<any>({});
   const [featuredImage, setFeaturedImage] = useState('');
   const [gallery, setGallery] = useState<string[]>([]);
   const [status, setStatus] = useState('draft');
   
   // SEO Data
-  const [focusKeyword, setFocusKeyword] = useState('');
+  const [focusKeywords, setFocusKeywords] = useState<string[]>([]);
+  const [keywordInput, setKeywordInput] = useState('');
   const [seoTitle, setSeoTitle] = useState('');
   const [metaDescription, setMetaDescription] = useState('');
   const [canonicalUrl, setCanonicalUrl] = useState('');
@@ -54,11 +66,13 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
     if (data) {
       setTitle(data.title || '');
       setSlug(data.slug || '');
-      setCategory(data.category || '');
+      const cats = data.category ? data.category.split(',').map((c: string) => c.trim()).filter(Boolean) : [];
+      setSelectedCategories(cats);
       setContent(data.content || {});
       setFeaturedImage(data.featured_image || '');
       setStatus(data.status || 'draft');
-      setFocusKeyword(data.focus_keyword || '');
+      const kws = data.focus_keyword ? data.focus_keyword.split(',').map((k: string) => k.trim()).filter(Boolean) : [];
+      setFocusKeywords(kws);
       setSeoTitle(data.seo_title || '');
       setMetaDescription(data.meta_description || '');
       setCanonicalUrl(data.canonical_url || '');
@@ -124,6 +138,29 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
     setGallery(gallery.filter((_, i) => i !== index));
   };
 
+  const toggleCategory = (cat: string) => {
+    if (selectedCategories.includes(cat)) {
+      setSelectedCategories(selectedCategories.filter(c => c !== cat));
+    } else {
+      setSelectedCategories([...selectedCategories, cat]);
+    }
+  };
+
+  const handleKeywordKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' || e.key === ',') {
+      e.preventDefault();
+      const val = keywordInput.trim();
+      if (val && !focusKeywords.includes(val)) {
+        setFocusKeywords([...focusKeywords, val]);
+      }
+      setKeywordInput('');
+    }
+  };
+
+  const removeKeyword = (kw: string) => {
+    setFocusKeywords(focusKeywords.filter(k => k !== kw));
+  };
+
   const handlePublish = async (publishStatus: string) => {
     if (!title || !slug) {
       alert('Title and Slug are required!');
@@ -138,8 +175,11 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
     setIsSaving(true);
     
     const blogData = {
-      title, slug, category, content, featured_image: featuredImage, status: publishStatus,
-      focus_keyword: focusKeyword, seo_title: seoTitle, meta_description: metaDescription,
+      title, slug,
+      category: selectedCategories.join(', '),
+      content, featured_image: featuredImage, status: publishStatus,
+      focus_keyword: focusKeywords.join(', '),
+      seo_title: seoTitle, meta_description: metaDescription,
       canonical_url: canonicalUrl, robots_meta: robotsMeta,
       og_title: ogTitle, og_description: ogDescription,
       twitter_title: twitterTitle, twitter_description: twitterDescription,
@@ -256,18 +296,26 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
             
             <div className="space-y-4">
               <div>
-                <label className="block text-xs font-bold text-slate-500 uppercase mb-2">Category</label>
-                <select 
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 text-slate-700 text-sm rounded-xl focus:ring-emerald-500 focus:border-emerald-500 block p-2.5 font-medium"
-                >
-                  <option value="">Select a category</option>
-                  <option value="Technical SEO">Technical SEO</option>
-                  <option value="Content Marketing">Content Marketing</option>
-                  <option value="Growth Strategy">Growth Strategy</option>
-                  <option value="Case Study">Case Study</option>
-                </select>
+                <label className="block text-xs font-bold text-slate-500 uppercase mb-2">Categories</label>
+                <div className="flex flex-wrap gap-2 p-3 bg-slate-50 border border-slate-200 rounded-xl min-h-[100px]">
+                  {CATEGORIES.map(cat => {
+                    const isSelected = selectedCategories.includes(cat);
+                    return (
+                      <button
+                        key={cat}
+                        type="button"
+                        onClick={() => toggleCategory(cat)}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
+                          isSelected
+                            ? 'bg-emerald-600 border-emerald-600 text-white shadow-sm'
+                            : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50 hover:border-slate-300'
+                        }`}
+                      >
+                        {cat}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
 
               <div>
@@ -329,14 +377,37 @@ export default function BlogEditorPage({ params }: { params: Promise<{ id: strin
             
             <div className="space-y-4">
               <div>
-                <label className="block text-xs font-bold text-slate-500 uppercase mb-2">Focus Keyword</label>
-                <input 
-                  type="text" 
-                  value={focusKeyword}
-                  onChange={(e) => setFocusKeyword(e.target.value)}
-                  className="bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium" 
-                  placeholder="e.g. Technical SEO Audit" 
-                />
+                <label className="block text-xs font-bold text-slate-500 uppercase mb-2">Focus Keywords</label>
+                <div className="flex flex-wrap gap-2 p-2 bg-slate-50 border border-slate-200 rounded-xl focus-within:ring-2 focus-within:ring-blue-500/20 focus-within:border-blue-500">
+                  {focusKeywords.map(kw => (
+                    <span key={kw} className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold bg-blue-100 text-blue-700 border border-blue-200">
+                      {kw}
+                      <button
+                        type="button"
+                        onClick={() => removeKeyword(kw)}
+                        className="hover:text-blue-900 transition-colors text-[10px] font-black"
+                      >
+                        ×
+                      </button>
+                    </span>
+                  ))}
+                  <input 
+                    type="text" 
+                    value={keywordInput}
+                    onChange={(e) => setKeywordInput(e.target.value)}
+                    onKeyDown={handleKeywordKeyDown}
+                    onBlur={() => {
+                      const val = keywordInput.trim();
+                      if (val && !focusKeywords.includes(val)) {
+                        setFocusKeywords([...focusKeywords, val]);
+                        setKeywordInput('');
+                      }
+                    }}
+                    placeholder={focusKeywords.length === 0 ? "e.g. Technical SEO, local seo" : "Add keyword..."}
+                    className="flex-1 min-w-[120px] bg-transparent text-sm text-slate-900 focus:outline-none py-1 font-medium" 
+                  />
+                </div>
+                <p className="text-[10px] text-slate-400 mt-1 font-medium">Press Enter or comma to add multiple keywords.</p>
               </div>
 
               <div>

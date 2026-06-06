@@ -5,6 +5,17 @@ import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 import { Edit2, Trash2, CheckCircle2, Search, Filter, Plus, Clock, Globe, Archive, Loader2 } from 'lucide-react';
 
+const CATEGORIES = [
+  'Local SEO',
+  'Technical SEO',
+  'Off Page SEO',
+  'On Page SEO',
+  'Performance Ads',
+  'GBP',
+  'Landing Page',
+  'AI SEO'
+];
+
 export default function BlogsPage() {
   const [blogs, setBlogs] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -37,7 +48,9 @@ export default function BlogsPage() {
 
   const filteredBlogs = blogs.filter(b => {
     const matchesSearch = b.title.toLowerCase().includes(search.toLowerCase()) || (b.slug && b.slug.toLowerCase().includes(search.toLowerCase()));
-    const matchesCategory = categoryFilter ? b.category === categoryFilter : true;
+    const matchesCategory = categoryFilter 
+      ? b.category?.split(',').map((c: string) => c.trim()).includes(categoryFilter) 
+      : true;
     const matchesStatus = statusFilter ? b.status === statusFilter : true;
     return matchesSearch && matchesCategory && matchesStatus;
   });
@@ -98,10 +111,9 @@ export default function BlogsPage() {
             className="flex-1 md:flex-none px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
           >
             <option value="">All Categories</option>
-            <option value="Technical SEO">Technical SEO</option>
-            <option value="Content Marketing">Content Marketing</option>
-            <option value="Growth Strategy">Growth Strategy</option>
-            <option value="Case Study">Case Study</option>
+            {CATEGORIES.map(cat => (
+              <option key={cat} value={cat}>{cat}</option>
+            ))}
           </select>
           <select 
             value={statusFilter}
@@ -156,9 +168,19 @@ export default function BlogsPage() {
                       </div>
                     </td>
                     <td className="px-6 py-4">
-                      <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-slate-100 text-slate-600">
-                        {blog.category || 'Uncategorized'}
-                      </span>
+                      <div className="flex flex-wrap gap-1">
+                        {blog.category ? (
+                          blog.category.split(',').map((c: string) => c.trim()).filter(Boolean).map((cat: string) => (
+                            <span key={cat} className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-bold bg-slate-100 text-slate-600 border border-slate-200">
+                              {cat}
+                            </span>
+                          ))
+                        ) : (
+                          <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-bold bg-slate-100 text-slate-400">
+                            Uncategorized
+                          </span>
+                        )}
+                      </div>
                     </td>
                     <td className="px-6 py-4">
                       <span className={"inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-bold border " + getStatusBadge(blog.status)}>

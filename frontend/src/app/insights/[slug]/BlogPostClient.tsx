@@ -211,7 +211,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
                     <div className="max-w-7xl mx-auto px-6 py-12 lg:py-20 flex flex-col lg:flex-row items-center gap-12">
                         <div className="flex-1 space-y-6">
                             <div className="flex items-center gap-2 text-sm font-bold text-primary uppercase tracking-wider">
-                                <span>Insights</span> <span className="text-slate-300">•</span> <span>{post.category || 'Technology'}</span>
+                                <span>Insights</span> <span className="text-slate-300">•</span> <span>{post.category ? post.category.split(',').map((c: string) => c.trim()).filter(Boolean).join(', ') : 'Technology'}</span>
                             </div>
                             <h1 className="text-3xl md:text-5xl lg:text-[54px] font-black text-text-heading leading-[1.1] tracking-tight poly-sans-feel">
                                 {post.title}
@@ -309,7 +309,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
                                         <img src={b.featured_image || '/assets/placeholder.jpg'} alt={b.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                                     </div>
                                     <div className="flex items-center gap-2 mb-2">
-                                        <span className="text-[10px] font-black text-primary uppercase tracking-widest">{b.category || 'Insights'}</span>
+                                        <span className="text-[10px] font-black text-primary uppercase tracking-widest">{b.category ? b.category.split(',').map((c: string) => c.trim()).filter(Boolean).join(', ') : 'Insights'}</span>
                                         <span className="h-1 w-1 rounded-full bg-slate-300"></span>
                                         <span className="text-[10px] font-bold text-slate-400">
                                             {new Date(b.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
